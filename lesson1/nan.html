@@ -1,0 +1,58 @@
+<script src="../lib/nan-init-v1.js"></script>
+<script>
+//画线
+//drawLine(x0,y0,x1,y1)
+
+//画园
+// function drawCycle(x0,y0,r){
+// drawCycle(100,100,100)
+// drawCycle(100,100,90)
+// drawCycle(90+10,90+10,80)
+// drawCycle(100,100,70)
+// drawCycle(100,100,60)
+// drawCycle(100,100,50)
+// drawCycle(100,100,40)
+// drawCycle(100,100,30)
+// drawCycle(100,100,20)
+// drawCycle(100,100,10)
+
+// drawCycle(100,100,5)
+// drawCycle(100,100,1)
+// drawCycle(100,100,0)
+
+//循环画同心圆
+var r=100;
+while(r>50)
+{
+	drawCycle(100,100,r)
+	r=r-2
+}
+
+
+
+// //画方向盘
+// drawLine(0,100,200,100);
+// drawLine(100,0,100,200);
+// drawCycle(100,100,100);
+
+
+// 画正方型
+// drawLine(0,0,100,0);
+// drawLine(100,0,100,100);
+// drawLine(100,100,0,100);
+// drawLine(0,100,0,0);
+
+
+
+//画救生圈
+// var r1 = 50;
+// var r2 = 20;
+// var n = 30;
+// //drawCycle(100,100,r1);
+// for(var i=0;i<n;i++){
+// 	var x = 100+Math.sin(Math.PI*2/n*i)*r1;
+// 	var y = 100+Math.cos(Math.PI*2/n*i)*r1;
+// 	drawCycle(x,y,r2);
+// }
+
+</script>
