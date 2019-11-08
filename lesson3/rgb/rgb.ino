@@ -7,7 +7,9 @@ int BLUE_PIN = 12;
 int SS_TIGER_PIN = 6;
 int SS_ECHO_PIN = 7;
 
-//程序初始化
+/**
+ * 程序初始化
+ */
 void setup() {
   pinMode(RED_PIN,OUTPUT);
   pinMode(GREEN_PIN,OUTPUT);
@@ -17,7 +19,9 @@ void setup() {
   pinMode(SS_ECHO_PIN,INPUT);
 }
 
-//程序运行循环
+/**
+ * 程序运行循环
+ */
 void loop() {
   //通过超声波测距传感器探测距离
   float d = getDistance();
@@ -31,7 +35,9 @@ void loop() {
 }
 
 
-
+/**
+ * 超声波测距函数
+ */
 float getDistance(){
   //初始化，发送超声波
   digitalWrite(SS_TIGER_PIN, LOW);
@@ -50,7 +56,9 @@ float getDistance(){
 
 //平滑处理颜色变换。
 int oldColors[] = {0,0,0};
-//颜色亮度调整
+/**
+ * 颜色亮度调整
+ */
 void updateColorByDistance(float distance){
   int color =  (distance -3.0) * (0xfff/ 150.0) ;
   //超过0xfff 记作0xfff
