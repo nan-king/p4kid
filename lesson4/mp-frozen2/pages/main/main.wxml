@@ -1,0 +1,17 @@
+<view>
+  <block wx:if="page">
+    <!-- 展示图片 -->
+    <image src='/images/frozen.jpg' />
+    <!-- 播放控件 -->
+    <video id="myVideo" src="{{page.url}}"
+     controls="{{true}}" 
+     show-fullscreen-btn='{{false}}' 
+     style="width:100%;height:95rpx" 
+     bindplay="play" bindended="stop"/>
+    <view>
+      <radio name="speed" bindtap="slowPlay" checked="{{speed == 'slow'}}">慢放</radio>
+      <radio name="speed" bindtap="normalPlay" checked="{{speed == 'normal'}}">快放</radio>
+      <radio name="speed" bindtap="stop" checked="{{speed == ''}}">暂停</radio>
+    </view>
+  </block>
+</view>

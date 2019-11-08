@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="root">
+  <view class="pages">
+    <navigator url="../letitgo/letitgo">
+        <view class="letitgo" >
+          <image class="letitgo-bg" src="/images/frozen.jpg"  />
+          <image class="letitgo-play" src="{{playIcon}}"/>
+          <text>let it go</text>
+        </view>
+    </navigator>
+    <navigator url="../letitgo_zh/letitgo">
+        <view class="letitgo" >
+          <image class="letitgo-bg" src="/images/frozen.jpg"  />
+          <image class="letitgo-play" src="{{playIcon}}"/>
+          <text>如冰释</text>
+        </view>
+    </navigator>
+    <block wx:for="{{pages}}" wx:for-item="page" wx:for-index="index" wx:key="{{page.key}}">
+      <navigator url="../main/main?index={{index}}">
+        <view>
+          <image class="letitgo-bg" src="{{page.image}}" />
+          <text>{{page.name}}</text>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>
