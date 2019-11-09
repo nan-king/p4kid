@@ -16,7 +16,7 @@
         </view>
     </navigator>
     <block wx:for="{{pages}}" wx:for-item="page" wx:for-index="index" wx:key="{{page.key}}">
-      <navigator url="../main/main?index={{index}}">
+      <navigator url="../section/section?index={{index}}">
         <view>
           <image class="letitgo-bg" src="{{page.image}}" />
           <text>{{page.name}}</text>

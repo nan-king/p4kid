@@ -3,7 +3,7 @@
   <view class="video">
     <!-- 视频演示 -->
     <video id="myVideo" src="{{src}}" bindtimeupdate="timeupdate"></video>
-    <video id="myAudio" style='display:none'  />
+    <audio id="myAudio" style='display:none'  />
   </view>
   <scroll-view scroll-y="true" style="height:100%"
    scroll-with-animation='true'

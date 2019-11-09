@@ -1,8 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/start/start",
     "pages/setting/setting",
-    "pages/main/main",
+    "pages/section/section",
     "pages/letitgo/letitgo",
     "pages/letitgo_zh/letitgo"
   ],
