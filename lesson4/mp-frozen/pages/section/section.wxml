@@ -1,7 +1,7 @@
 <view class="root" wx:if="page">
   <view class="header">
     <!-- 展示图片 -->
-    <image src='/images/p2-3.jpeg' style="width:750rpx;height:400rpx" />
+    <image src='{{page.image}}' style="width:750rpx;height:400rpx" />
     <!-- 播放控件 -->
     <video id="myVideo" src="{{page.url}}" controls="{{true}}" show-fullscreen-btn='{{false}}' style="width:100%;height:90rpx" bindplay="play" bindended="stop"  bindtimeupdate="timeupdate"/>
     <audio id="myAudio" style='display:none' />
