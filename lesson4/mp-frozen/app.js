@@ -125,24 +125,41 @@ var lyric = `13.The snow glows white on the mountain tonight;  今夜白雪漫�
 196.Here I stand in the light of day;                           我就站在日光之下；
 204.Let the storm rage on;                                      让风暴怒吼吧；
 210.The cold never bothered me anyway;                          不惧寒风（寒冷再也不能烦扰我了）！`
-var lyricLines = [];
-for (var line of lyric.split(/[\r\n]+/)) {
-  var m = line.match(/(\d+)\.([\u0001-\u0100]+?)\s+([\u4e00-\uffff][^\r\n]*)/);
-  if (m) {
-    var en = m[2];
-    var zh = m[3].replace(/[\(（][^)]+[\)\）]/, '<sub>$&</sub>');
-    lyricLines.push({
-      zh:zh,
-      en: en,
-      text:en+'<br>'+zh ,
-      time: +m[1]
-    })
-  }else{
-    console.error('not match line:'+line);
+var lyricLines = buildLyricLines(lyric);
+function buildLyricLines(lyric){
+  var lyricLines = [];
+  for (var line of lyric.replace(/^\s+|\s+$/g, '').split(/[\r\n]+/)) {
+    var m = line.match(/\s*(\d+)\.([\u0001-\u0100]+?)\s+([\u4e00-\uffff][^\r\n]*)/);
+    if (m) {
+      var en = m[2];
+      var zh = m[3].replace(/[\(（][^)]+[\)\）]/, '<sub>$&</sub>');
+      lyricLines.push({
+        zh: zh,
+        en: en,
+        text: en + '<br>' + zh,
+        time: +m[1]
+      })
+    } else {
+      console.error('not match line:' + line);
+    }
+  }
+  return lyricLines;
+}
+var sectionMap = {
+  'P2-3': {
+    image:"/images/p2-3.jpeg",
+  source:`
+  4.The KINGDOM OF ARENDELLE was a busy and happy place,          阿伦黛尔王国是一个繁忙而欢乐的地方，
+  10.nestled among the mountains and fjords of the far north.      它坐落在群山和峡湾之间。
+
+  16.At night,  the northern lights often lit up the skies in beautiful patterns,    夜晚时分,绚丽的北极光常常点亮夜空,变幻出各种美妙奶的图案。
+  22.But the king and queen lived with a secret worry.               但是,国王和王后却有一个萦绕在心头的隐忧。`
   }
 }
-
-
+for (var n in sectionMap){
+  var s = sectionMap[n];
+  s.lyricLines = buildLyricLines(s.source);
+}
 //console.log(lyricLines)
 var names = [];
 for(var i=2;i<=88;i+=2){
@@ -152,7 +169,8 @@ var defaultImage = '/images/frozen.jpg';
 App({
   globalData:{
     pages: names.map(n => ({ name: n,image : defaultImage})),
-    letitgo:'',
+    letitgo: '',
+    sectionMap: sectionMap,
     lyricLines: lyricLines
   },
   onLaunch: function () {
@@ -169,6 +187,7 @@ App({
         for (var i = 0; i < list.length;i++){
           pages[i].url = list[i].tempFileURL;
           pages[i].image = defaultImage;
+          pages[i].lyricLines = sectionMap[names[i]].lyricLines
         }
         //console.log('pages', pages, list)
       },

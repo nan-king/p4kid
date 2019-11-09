@@ -10,7 +10,7 @@ Page({
   onLoad: function (options) {
     this.setData({ src: getApp().globalData.letitgo});
     this.videoCtx = wx.createVideoContext('myVideo',this);
-    this.audioCtx = wx.createVideoContext('myAudio',this);
+    this.audioCtx = wx.createAudioContext('myAudio',this);
   },
   chooseLine:function(e){
     
@@ -23,9 +23,11 @@ Page({
 
     videoCtx.seek(time+1);
     setTimeout(()=>videoCtx.pause(),100);
+    console.log(this.audioCtx, Object.keys(this.audioCtx))
+    //https://fanyi.baidu.com/gettts?lan=en&text=hello%20everyone&spd=3&source=web
     this.audioCtx.setSrc('https://fanyi.baidu.com/gettts?lan=en&text=' + encodeURIComponent(item.en)+'&spd=3&source=web');
 
-    this.audioCtx.playbackRate(0.5)
+    //this.audioCtx.playbackRate(0.5)
     this.audioCtx.play();
     this.setData({
       selectedIndex: index,

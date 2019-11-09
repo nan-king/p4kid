@@ -1,0 +1,39 @@
+/* pages/main.wxss */
+
+.root{
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  overflow:hidden;
+}
+.header{
+  height:580rpx;
+  width:750rpx;
+  flex-grow:0;
+
+  overflow:hidden;
+}
+
+scroll-view{
+  width:100%;
+  overflow: scroll;
+  flex-grow:1;
+}
+
+rich-text{
+  font-size: 16pt;
+  color:#aaaaaa;
+  background: #ffeeee;
+  border-bottom:20px solid yellow;
+}
+.selected{
+  color:rgb(119, 0, 255);
+  font-weight: bold;
+}
+.next{
+  color:#000000;
+}
+.pre{
+  color:#666666;
+}
