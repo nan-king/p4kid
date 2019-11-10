@@ -15,6 +15,11 @@ module.exports = {
   },
   "P4-5": {
     image: "/images/p4-5.jpeg",
+    keywords:`power 能力
+    freeze 冻结
+    convince 说服
+    sneak 偷偷地走
+    wonderland 奇境`,
     source: `1.Their eldest daughter, Elsa, had a MAGICAL POWER.  他们的大女爱莎拥有一种魔力,
       5.She could freeze things and create snow and ice with her hands! 她只要挥择手,就能把东西冰冻起来,而目还能变出冰雪!
       10.Anna, the younger daughter, loved her big sister. 小女儿安娜很喜欢她的姐姐。
@@ -23,6 +28,12 @@ module.exports = {
   },
   "P6-7": {
     image: "/images/p6-7.jpeg",
+    keywords: `accidentally 意外地
+    blast 一股（气流）
+    unconscious 不省人事的
+    streak  条纹
+    frightened 害怕的`,
+
     source: `
       1.But while the girls were playing,     她们玩得正高兴,
       5.Elsa accidentally hit Anna with a blast of icy magic.   意外发生了一艾莎的一道冰雪魔法击中了安娜。
