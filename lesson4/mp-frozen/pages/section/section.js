@@ -42,6 +42,13 @@ Page({
     this.setData({ speed: '' })
     this.videoCtx.stop();
   },
+  speak:function(e){
+
+    var en = e.target.dataset.en;
+    //https://fanyi.baidu.com/gettts?lan=en&text=hello%20everyone&spd=3&source=web
+    this.audioCtx.setSrc('https://fanyi.baidu.com/gettts?lan=en&text=' + encodeURIComponent(en) + '&spd=3&source=web');
+    this.audioCtx.play();
+  },
   chooseLine: function (e) {
 
     var time = e.target.dataset.time;

@@ -37,3 +37,9 @@ rich-text{
 .pre{
   color:#666666;
 }
+.keywords{
+  position:absolute;top:100rpx;left:100rpx;
+  background:rgba(255,255,0, 0.3);
+  width:80%;
+  color:#fffb00;
+}
