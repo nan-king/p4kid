@@ -133,7 +133,10 @@ function buildLyricLines(lyric){
       var m = line.match(/\s*(?:(\d+)\.)?([\u0001-\u0100]+?)\s+([\u4e00-\uffff][^\r\n]*)/);
       if (m) {
         var en = m[2];
-        var zh = m[3].replace(/[\(（][^)]+[\)\）]/, '<sub>$&</sub>');
+        var zh = m[3];
+        if(m[1]){
+          zh =zh.replace(/[\(（][^)]+[\)\）]/, '<sub>$&</sub>');
+        }
         lyricLines.push({
           zh: zh,
           en: en,

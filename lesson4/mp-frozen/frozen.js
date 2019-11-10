@@ -20,11 +20,11 @@ module.exports = {
     convince 说服
     sneak 偷偷地走
     wonderland 奇境`,
-    source: `1.Their eldest daughter, Elsa, had a MAGICAL POWER.  他们的大女爱莎拥有一种魔力,
+    source: `0.Their eldest daughter, Elsa, had a MAGICAL POWER.  他们的大女爱莎拥有一种魔力,
       5.She could freeze things and create snow and ice with her hands! 她只要挥择手,就能把东西冰冻起来,而目还能变出冰雪!
       10.Anna, the younger daughter, loved her big sister. 小女儿安娜很喜欢她的姐姐。
-      15.One night,  一天晚上, 
-      16.she convinced Elsa to sneak into the Great Hall and create a WINTER WONDERLAND! 安娜说服艾莎偷偷地溜进大厅, 用冰雪打造了一座冬日乐园`
+      14.One night,  一天晚上, 
+      15.she convinced Elsa to sneak into the Great Hall and create a WINTER WONDERLAND! 安娜说服艾莎偷偷地溜进大厅, 用冰雪打造了一座冬日乐园`
   },
   "P6-7": {
     image: "/images/p6-7.jpeg",
