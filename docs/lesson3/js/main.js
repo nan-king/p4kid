@@ -1,17 +1,17 @@
-document.write(`<script src="./js/three.min.js"/></script>
-<script src="./js/OrbitControls.js"></script>
-<script src="./js/three-ext.js"></script>
-<script src="./js/line.js"></script>
-<div id="webGL-container" style="width:1000px;height:1000px;overflow:hidden"></div>`);
+document.write(['three.min.js','OrbitControls.js','three-ext.js','line.js'].map(f=>f+'></script>')
+    .join('\n')
+    .replace(/^/gm,'<script src='+document.scripts[document.scripts.length-1].src.replace(/[^\/]+$/,'') )
+   +` <div id="webGL-container" style="width:1000px;height:1000px;overflow:hidden"></div>`);
 
 
 /*global variables*/
 var WIDTH=1000, HEIGHT=1000;
 var newModels = [];
+var scene ;
 
 function init() {
-	var scene,camera,renderer;
-	scene = new THREE.Scene();
+	var camera,renderer;
+    scene = new THREE.Scene();
 	camera=new THREE.PerspectiveCamera(25 , 1, 0.1, 3000);
 	renderer= new THREE.WebGLRenderer({
 	        antialias: true
@@ -53,7 +53,7 @@ function init() {
     ground.scale.multiplyScalar(1);
     ground.castShadow = false;
     ground.receiveShadow = true;
-    scene.add(ground);
+    //scene.add(ground);
 
     /*Camera*/
     camera.position.x = 250;
@@ -190,6 +190,7 @@ class Nan3D{
 	}
 	genSTL(){
 		return saveAsSTL(this.models);
+        //return saveAsSTL([new THREE.Mesh(new THREE.BoxGeometry(10,10, 10))])
 	}
 }
 

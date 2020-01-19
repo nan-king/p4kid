@@ -1,0 +1,72 @@
+<script src="../lesson3/js/main.js"></script>
+<script>
+init();
+//class Nan3D{
+//  /* 连点成线 */
+//  drawLines(p1,p2,p3...)
+//  /* 分多少个切片 */
+//  routeY(segments)
+//}
+
+//创建一个用于绘制3D图形的工具类对象
+var nan= new Nan3D();
+
+//在xy平面下绘制连续线段
+nan.drawLines
+   ([0,180],//顶点
+    [30,160],//屋檐
+    [15,160],//屋檐内
+    [15,140],//走廊内
+    [26,140],//走廊护栏内下
+    [26,145],//走廊护栏内上
+    [28,145],//走廊护栏外上
+    [28,140],//走廊护栏外下
+    [30,140],//走廊护栏外突上
+    [30,138],//走廊护栏外突下
+    [28,136],//走廊护栏外突收回处
+    [28,133],//走廊护栏外下（收腰处上）
+    [18,122],//塔台收腰处
+    [35,0])//塔底部
+
+//绕y轴旋转形成几何体，传入参数，制定旋转过程细分数
+//nan.routeY(6);
+
+
+
+var length = 132, width = 108;
+
+var shape = new THREE.Shape();
+shape.moveTo( 0,0 );
+shape.lineTo( length, 0 );
+shape.lineTo( length, width );
+shape.lineTo( 0, width );
+shape.lineTo( 0, 0 );
+
+
+shape.moveTo( length/4,width/4 );
+shape.lineTo( length/4, width/2 );
+shape.lineTo( length-10, width-10 );
+shape.lineTo( length/2, width/4 );
+shape.lineTo( length/4, width/4 );
+
+var extrudeSettings = {
+    steps: 1,
+    depth: 1,
+    bevelEnabled: true,
+    bevelThickness: 0,
+    bevelSize: 1,
+    bevelOffset: 0,
+    bevelSegments: 1
+};
+
+var geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
+    var Ground_material = new THREE.MeshPhongMaterial({
+        color: 0xa0adaf,
+        shininess: 150,
+        specular: 0xffffff,
+        flatShading: THREE.SmoothShading
+    });
+var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+var mesh = new THREE.Mesh( geometry, Ground_material ) ;
+scene.add( mesh );
+</script>
