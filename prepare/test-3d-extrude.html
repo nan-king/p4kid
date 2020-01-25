@@ -1,4 +1,4 @@
-<script src="../lesson3/js/main.js"></script>
+<script src="../docs/lesson3/js/main.js"></script>
 <script>
 init();
 //class Nan3D{
@@ -35,24 +35,72 @@ nan.drawLines
 
 var length = 132, width = 108;
 
+// var shape = new THREE.Shape();
+// shape.moveTo( 0,0 );
+// shape.lineTo( 56, 0 );
+// shape.lineTo( 43, 41 );
+// shape.lineTo( 13, 41 );
+// shape.lineTo( 0, 0 );
+
+
+// shape.moveTo(14,4);
+// shape.lineTo(15, 25);
+// shape.lineTo(19, 35);
+// shape.lineTo(38, 35 );
+// shape.lineTo(42, 26 );
+// shape.lineTo(42, 4 );
+// shape.lineTo( 14,4);
+
+
+
+// var shape2 = new THREE.Shape();
+
+// shape2.moveTo(14,35);
+
+// shape2.lineTo(14, 41 );
+// shape2.lineTo(42, 41 );
+// shape2.lineTo(42, 35 );
+// shape2.lineTo(14, 35 );
+
+len = 14.849242404917497;//2,5
+
 var shape = new THREE.Shape();
 shape.moveTo( 0,0 );
-shape.lineTo( length, 0 );
-shape.lineTo( length, width );
-shape.lineTo( 0, width );
+shape.lineTo( len, 0 );
+shape.lineTo( len, len );
+shape.lineTo( 0, len );
 shape.lineTo( 0, 0 );
 
 
-shape.moveTo( length/4,width/4 );
-shape.lineTo( length/4, width/2 );
-shape.lineTo( length-10, width-10 );
-shape.lineTo( length/2, width/4 );
-shape.lineTo( length/4, width/4 );
+var shape2 = new THREE.Shape();
+shape.moveTo(len/2-1,len/2-2.5);
+shape.lineTo(len/2-1,len/2+2.5);
+shape.lineTo(len/2+1,len/2+2.5);
+shape.lineTo(len/2+1,len/2-2.5 );
+shape.lineTo( len/2-1,len/2-2.5);
+
+
+
+// shape.moveTo( length/4,width/4 );
+// shape.lineTo( length/4, width/2 );
+// shape.lineTo( length-10, width-10 );
+// shape.lineTo( length/2, width/4 );
+// shape.lineTo( length/4, width/4 );
 
 var extrudeSettings = {
     steps: 1,
-    depth: 1,
-    bevelEnabled: true,
+    depth: 3,
+    bevelEnabled: false,
+    bevelThickness: 0,
+    bevelSize: 1,
+    bevelOffset: 0,
+    bevelSegments: 1
+};
+
+var extrudeSettings2 = {
+    steps: 1,
+    depth: 10,
+    bevelEnabled: false,
     bevelThickness: 0,
     bevelSize: 1,
     bevelOffset: 0,
@@ -60,13 +108,20 @@ var extrudeSettings = {
 };
 
 var geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
-    var Ground_material = new THREE.MeshPhongMaterial({
-        color: 0xa0adaf,
-        shininess: 150,
-        specular: 0xffffff,
-        flatShading: THREE.SmoothShading
-    });
+var geometry2 = new THREE.ExtrudeGeometry( shape2, extrudeSettings2 );
+var Ground_material = new THREE.MeshPhongMaterial({
+    color: 0xa0adaf,
+    shininess: 150,
+    specular: 0xffffff,
+    flatShading: THREE.SmoothShading
+});
+
+
 var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 var mesh = new THREE.Mesh( geometry, Ground_material ) ;
+var mesh2 = new THREE.Mesh( geometry2, Ground_material ) ;
+nan.models = [mesh,mesh2]
 scene.add( mesh );
+scene.add( mesh2 );
+
 </script>

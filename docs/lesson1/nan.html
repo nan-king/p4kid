@@ -1,48 +1,70 @@
 <script src="../lib/nan-init-v1.js"></script>
 <script>
-//画线
-//drawLine(x0,y0,x1,y1)
 
-//画园
-// function drawCycle(x0,y0,r){
+// 画圆
+drawCycle(100,100,100)
+
+// 直接画同心园:
 // drawCycle(100,100,100)
+// drawCycle(100,100,98)
+// drawCycle(100,100,96)
+// drawCycle(100,100,94)
+// drawCycle(100,100,92)
 // drawCycle(100,100,90)
-// drawCycle(90+10,90+10,80)
+// drawCycle(100,100,88)
+// drawCycle(100,100,86)
+// drawCycle(100,100,84)
+// drawCycle(100,100,82)
+// drawCycle(100,100,80)
+// drawCycle(100,100,78)
+// drawCycle(100,100,76)
+// drawCycle(100,100,74)
+// drawCycle(100,100,72)
 // drawCycle(100,100,70)
+// drawCycle(100,100,68)
+// drawCycle(100,100,66)
+// drawCycle(100,100,64)
+// drawCycle(100,100,62)
 // drawCycle(100,100,60)
+// drawCycle(100,100,58)
+// drawCycle(100,100,56)
+// drawCycle(100,100,54)
+// drawCycle(100,100,52)
 // drawCycle(100,100,50)
-// drawCycle(100,100,40)
-// drawCycle(100,100,30)
-// drawCycle(100,100,20)
-// drawCycle(100,100,10)
 
-// drawCycle(100,100,5)
-// drawCycle(100,100,1)
-// drawCycle(100,100,0)
 
-//循环画同心圆
+
+// 条件循环画同心圆1:
 // var r=100;
-// while(r>50)
+// while(r>60)
 // {
 // 	drawCycle(100,100,r)
 // 	r=r-2
 // }
-var array =[10,20,30,40,50,60,70,80,90,95,100,105]
-for (var i = 0; i < array.length; i++) {
-	drawCycle(100,100,array[i])
-};
 
+// 条件循环画同心圆2:
 // for(var r=100;r>50;r=r-2){
-// drawCycle(100,100,r)
+//   drawCycle(100,100,r)
 // }
 
-// //画方向盘
+
+// // 数组循环画同心圆:
+// var array =[100,90,88,86,84,82,80,78,76,74,72,70,68,66,64,62,50]
+// for (var i = 0; i < array.length; i++) {
+// 	drawCycle(100,100,array[i])
+// };
+
+
+
+
+
+// //画方向盘:
 // drawLine(0,100,200,100);
 // drawLine(100,0,100,200);
 // drawCycle(100,100,100);
 
 
-// 画正方型
+// 画正方型:
 // drawLine(0,0,100,0);
 // drawLine(100,0,100,100);
 // drawLine(100,100,0,100);
@@ -50,7 +72,7 @@ for (var i = 0; i < array.length; i++) {
 
 
 
-//画救生圈
+// 画救生圈:
 // var r1 = 50;
 // var r2 = 20;
 // var n = 30;
