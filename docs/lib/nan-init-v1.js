@@ -39,7 +39,7 @@ ctx.strokeStyle='red';//线条颜色
 // drawLine(200,100,190,100);
 // drawLine(0,100,10,100);
 
-ctx.strokeStyle='red';//线条颜色
+ctx.strokeStyle='blue';//线条颜色
 
 //画线
 function drawLine(x0,y0,x1,y1){

@@ -81,6 +81,7 @@ drawCycle(100,100,50)
 ```
 刷新一下看看？ 一组神奇的同心圆出现了，有点像一张光盘。
 
+![同心圆](../images/lesson1/cycle.jpg "concentric circles")
 
 ### 极限拓展
 
