@@ -12,7 +12,7 @@
 	2. 如果孩子喜欢画画最好（没见过不喜欢画画的孩子^_^）。
 	3. 经本章学习，让孩子掌握基本的函数调用。了解计算机擅长的事情，激发孩子学习编程语言的兴趣。
 
-<a href="lesson1/nan.html"> <img src="/images/lesson1/cycle.jpg"/></a>
+<a href="lesson1/nan.html"> <img class="sample"  src="/images/lesson1/cycle.jpg"/></a>
     
 ## [{{ site.chapters[1] }}](lesson2/)
 
@@ -28,9 +28,9 @@
     4. 经本章教学，可以让孩子了解基本3D建模原理，了解3D模型在计算机内的表示方法。
 
 <a href="lesson3/nan.html"> 
-	<img alt="灯塔画板展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse.png"/>
-	<img alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse1.jpg"/>
-	<img alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse2.jpg"/>
+	<img class="sample"  alt="灯塔画板展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse.png"/>
+	<img class="sample"  alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse1.jpg"/>
+	<img class="sample"  alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse2.jpg"/>
 </a>
 
 
@@ -40,6 +40,6 @@
 	待续...
 
 <a href="lesson4/nan.html"> 
-	<img alt="机械臂展示" width="30%" height="30%" title="预览" src="/images/lesson4/arm1.jpg"/>
-	<img alt="机械臂展示" width="50%" height="50%" title="预览" src="/images/lesson4/arm2.jpg"/>
+	<img class="sample" alt="机械臂展示" width="30%" height="30%" title="预览" src="/images/lesson4/arm1.jpg"/>
+	<img class="sample" alt="机械臂展示" width="50%" height="50%" title="预览" src="/images/lesson4/arm2.jpg"/>
 </a>
