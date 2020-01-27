@@ -21,7 +21,7 @@ canvas.onmousemove = function(e){
 //<script>
 //var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-//ctx.scale(3,3);
+ctx.scale(3,3);
 ctx.translate(1,1);
 var tasks=[];
 function flushLazy(draw){
