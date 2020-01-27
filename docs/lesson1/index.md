@@ -8,6 +8,7 @@
 1. 知识预备：熟悉基本的git 命令，孩子爸妈掌握一点html 脚本编程环境， 知道出了错怎么差错（不在孩子面前丢脸^_^）
 2. 下载代码：
    git clone https://github.com/nan-king/p4nan.git
+   
 3. 家长阅读代码 
    docs/lesson1/nan.html 源代码，每个注释的代码片段可以当着一个小结来教学。
 4. 拷贝框架

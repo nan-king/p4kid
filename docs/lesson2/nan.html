@@ -4,47 +4,52 @@
 //drawLine(x0,y0,x1,y1)
 
 
-//画多边形
-var shape1 = drawShape(0,0,
-		100,0,
-		0,100)
-shape1.fill('red');
+// //画多边形
+// var shape1 = drawShape(0,0,
+// 		100,0,
+// 		0,100)
+// shape1.fill('red');
 
 
 
-var shape2 = drawShape(100,0,
-		200,0,
-		200,100,
-		100,100)
-shape2.fill('yellow');
+// var shape2 = drawShape(100,0,
+// 		200,0,
+// 		200,100,
+// 		100,100)
+// shape2.fill('yellow');
 
 
 
-var shape3=drawShape(200,0,
-	100,100,
-	0,100)
-shape3.fill('pink')
+// var shape3=drawShape(200,0,
+// 	100,100,
+// 	0,100)
+// shape3.fill('pink')
 
-var shape4=drawShape(100,100,
-	200,150,
-	100,200,
-	0,150)
-shape4.fill("green")
+// var shape4=drawShape(100,100,
+// 	200,150,
+// 	100,200,
+// 	0,150)
+// shape4.fill("green")
 
 
-var shape5=drawShape(0,100,
-	100,100,
-	0,150)
+// var shape5=drawShape(0,100,
+// 	100,100,
+// 	 0,150)
 
-// var i = 0;
-// while(i<4){
-// 	drawStart5(
-// 		cx+toX(r,(30-30*i)),// toX(radio,angle)  根据半径和角度，计算x偏移
-// 		cy+toY(r,(30-30*i)),// toY(radio,angle)  根据半径和角度，计算y偏移
-// 		cr*0.6)
-// 	.fill('yellow');
-// 	i++;
-// }
+//画国旗:
+var cx=50,cy=50;
+var cr=10;
+var r=50;
+
+var i = 0;
+while(i<4){
+	var star = drawStart5(
+		cx+toX(r,(30-30*i)),// toX(radio,angle)  根据半径和角度，计算x偏移
+		cy+toY(r,(30-30*i)),// toY(radio,angle)  根据半径和角度，计算y偏移
+		cr*0.6)
+	star.fill('yellow');
+	i++;
+}
 
 
 
