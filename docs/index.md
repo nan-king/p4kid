@@ -28,9 +28,9 @@
     4. 经本章教学，可以让孩子了解基本3D建模原理，了解3D模型在计算机内的表示方法。
 
 <a href="lesson3/nan.html"> 
-	<img width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse.png"/>
-	<img width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse1.jpg"/>
-	<img width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse2.jpg"/>
+	<img alt="灯塔画板展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse.png"/>
+	<img alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse1.jpg"/>
+	<img alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse2.jpg"/>
 </a>
 
 
@@ -40,6 +40,6 @@
 	待续...
 
 <a href="lesson4/nan.html"> 
-	<img width="30%" height="30%" title="预览" src="/images/lesson4/arm1.jpg"/>
-	<img width="50%" height="50%" title="预览" src="/images/lesson4/arm2.jpg"/>
+	<img alt="机械臂展示" width="30%" height="30%" title="预览" src="/images/lesson4/arm1.jpg"/>
+	<img alt="机械臂展示" width="50%" height="50%" title="预览" src="/images/lesson4/arm2.jpg"/>
 </a>
