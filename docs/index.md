@@ -27,7 +27,7 @@
     3. 可拿 https://threejs.org/ 官方demo 秀一下(多在墙外，做好必要技术准备)，激发学习兴趣。
     4. 经本章教学，可以让孩子了解基本3D建模原理，了解3D模型在计算机内的表示方法。
 
-<a href="lesson3/nan.html"> 
+<a href="/lesson3/nan.html"> 
 	<img class="sample"  alt="灯塔画板展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse.png"/>
 	<img class="sample"  alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse1.jpg"/>
 	<img class="sample"  alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse2.jpg"/>
@@ -39,7 +39,7 @@
     1. 强化基本的硬件编程（arduino），通过电机和杠杆控制实物，增强编程成就感。
 	待续...
 
-<a href="lesson4/nan.html"> 
+<a href="/lesson4/nan.html"> 
 	<img class="sample" alt="机械臂展示" width="30%" height="30%" title="预览" src="/images/lesson4/arm1.jpg"/>
 	<img class="sample" alt="机械臂展示" width="50%" height="50%" title="预览" src="/images/lesson4/arm2.jpg"/>
 </a>
