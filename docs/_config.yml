@@ -1,2 +1,9 @@
-theme: jekyll-theme-architecttitle: Programming guidance of Nandescription: Useful for other children learning programming
-
+theme: jekyll-theme-architect
+title: Programming guidance of Nan
+description: Useful for other children learning programming
+chapters: 
+  - 开篇第一： 圆的艺术
+  - 二维图像： 国旗和七巧板
+  - 三维世界： 灯塔模型
+  - 操控万物： 机器人的手臂
+

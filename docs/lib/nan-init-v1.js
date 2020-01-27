@@ -1,11 +1,12 @@
 var canvas = document.createElement('canvas');
-canvas.setAttribute('width',200);
-canvas.setAttribute('height',200);
+canvas.setAttribute('width',606);
+canvas.setAttribute('height',606);
 document.write(`
 <style>
 #canvas-parent{
-	border:1px dashed red;
-	transform-origin:top left;transform: scale(3) ;
+	border:1px dashed rgb(255,0,0,.1);
+	padding:0px;
+	transform-origin:top left;/*transform: scale(3) ;*/
 }
 </style>
 
@@ -20,6 +21,8 @@ canvas.onmousemove = function(e){
 //<script>
 //var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+//ctx.scale(3,3);
+ctx.translate(1,1);
 var tasks=[];
 function flushLazy(draw){
 	console.log(tasks)

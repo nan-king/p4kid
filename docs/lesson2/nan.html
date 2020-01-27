@@ -37,21 +37,37 @@
 // 	 0,150)
 
 //画国旗:
-var cx=50,cy=50;
-var cr=10;
-var r=50;
+var h = 75;
+var w = 100;
+//绘制旗面
+drawShape(0,0,
+ w,0,
+ w,h,
+ 0,h
+ ).fill('red');
+var w2=3;
+var h2=h*3
+drawShape(0,0,
+ 2,0,
+ 2,h*3,
+ 0,h*3).fill('gray')
 
+var cx = w/5 //大五角星中心点 x
+var cy = h/3; //大五角星中心点 y
+var cr = h/12; //大五角星外圆半径
+//drawStart5(x,y,r)
+drawStart5(cx,cy,cr).fill('yellow')
+
+var r = h/3; //小五角星到大五角星的距离
 var i = 0;
 while(i<4){
-	var star = drawStart5(
-		cx+toX(r,(30-30*i)),// toX(radio,angle)  根据半径和角度，计算x偏移
-		cy+toY(r,(30-30*i)),// toY(radio,angle)  根据半径和角度，计算y偏移
-		cr*0.6)
-	star.fill('yellow');
-	i++;
+ drawStart5(
+  cx+toX(r,(30-30*i)),// toX(radio,angle)  根据半径和角度，计算x偏移
+  cy+toY(r,(30-30*i)),// toY(radio,angle)  根据半径和角度，计算y偏移
+  cr*0.6)
+ .fill('yellow');
+ i++;
 }
-
-
 
 
 </script>

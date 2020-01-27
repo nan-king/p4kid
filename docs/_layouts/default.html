@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css">
     <style>
       #sidebar ul li{
-        font-size:16px;
+        font-size:14px;
+      }
+      .preface{
+        background: #ff9;
       }
     </style>
-
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -55,10 +57,10 @@
           {% endif %}
           <hr>
           <ul>
-            <li><a href='/lesson1/'>第一章： 圆的艺术</a></li>
-            <li><a href='/lesson2/'>第二章： 七巧板的坐标</a></li>
-            <li><a href='/lesson3/'>第三章： 灯塔照我远行</a></li>
-            <li><a href='/lesson4/'>第四章： 机器人的手臂</a></li>
+    
+    {% for item in site.chapters %}
+    <li><a href="/lesson{{forloop.index}}/">{{item}}</a></li>
+    {% endfor %}
           </ul>
 
           {% if site.github.is_project_page %}
