@@ -12,12 +12,12 @@
 	2. 如果孩子喜欢画画最好（没见过不喜欢画画的孩子^_^）。
 	3. 经本章学习，让孩子掌握基本的函数调用。了解计算机擅长的事情，激发孩子学习编程语言的兴趣。
 
-<a href="lesson1/nan.html"> <img class="sample"  src="/images/lesson1/cycle.jpg"/></a>
+<a href="lesson1/nan.html"> <img class="sample" width="204" height="204"  src="/images/lesson1/cycle.jpg"/></a>
     
 ## [{{ site.chapters[1] }}](lesson2/)
 
     1. 让孩子了解rgb三原色，增强平面坐标感觉。
-    2. 七角板的绘制让孩子了解平面坐标和多边形的关系。巩固坐标知识和基本的函数调用方法。
+    2. 七角板的绘制让孩子了解平面30坐标和多边形的关系。巩固坐标知识和基本的函数调用方法。
     3. 国旗绘制更多给孩子一种成就感（可以挑选国庆这种节日，结合学校铺垫，效果更佳），强化学习兴趣。
 
 ## [{{ site.chapters[2] }}](lesson3/)
@@ -28,9 +28,9 @@
     4. 经本章教学，可以让孩子了解基本3D建模原理，了解3D模型在计算机内的表示方法。
 
 <a href="/lesson3/nan.html"> 
-	<img class="sample"  alt="灯塔画板展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse.png"/>
-	<img class="sample"  alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse1.jpg"/>
-	<img class="sample"  alt="灯塔3D 实物展示" width="30%" title="预览" height="30%" src="/images/lesson3/lighthouse2.jpg"/>
+	<img class="sample"  alt="灯塔画板展示" width="207" height="265"  title="预览" src="/images/lesson3/lighthouse.png"/>
+	<img class="sample"  alt="灯塔3D 实物展示" width="207" height="342"  title="预览" src="/images/lesson3/lighthouse1.jpg"/>
+	<img class="sample"  alt="灯塔3D 实物展示" width="207" height="253" title="预览" src="/images/lesson3/lighthouse2.jpg"/>
 </a>
 
 
@@ -40,6 +40,6 @@
 	待续...
 
 <a href="/lesson4/nan.html"> 
-	<img class="sample" alt="机械臂展示" width="30%" height="30%" title="预览" src="/images/lesson4/arm1.jpg"/>
-	<img class="sample" alt="机械臂展示" width="50%" height="50%" title="预览" src="/images/lesson4/arm2.jpg"/>
+	<img class="sample" alt="机械臂展示" width="292" height="389" title="预览" src="/images/lesson4/arm1.jpg"/>
+	<img class="sample" alt="机械臂展示" width="360" height="270" title="预览" src="/images/lesson4/arm2.jpg"/>
 </a>
