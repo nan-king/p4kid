@@ -1,6 +1,7 @@
+var imageBase = 'https://nan.xidea.org/images/frozen/'
 module.exports = {
   'P2-3': {
-    image: "/images/p2-3.jpeg",
+    image: imageBase+"p2-3.jpg",
     keywords:`nestle  坐落
       fjord   峡湾
       pattern 图案，模式
@@ -14,7 +15,7 @@ module.exports = {
       22.But the king and queen lived with a secret worry.               但是,国王和王后却有一个萦绕在心头的隐忧。`
   },
   "P4-5": {
-    image: "/images/p4-5.jpeg",
+    image: imageBase +"p4-5.jpg",
     keywords:`power 能力
     freeze 冻结
     convince 说服
@@ -27,7 +28,7 @@ module.exports = {
       15.she convinced Elsa to sneak into the Great Hall and create a WINTER WONDERLAND! 安娜说服艾莎偷偷地溜进大厅, 用冰雪打造了一座冬日乐园`
   },
   "P6-7": {
-    image: "/images/p6-7.jpeg",
+    image: imageBase +"p6-7.jpg",
     keywords: `accidentally 意外地
     blast 一股（气流）
     unconscious 不省人事的
