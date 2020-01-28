@@ -65,7 +65,118 @@
     <li><a href="/lesson{{forloop.index}}/">{{item}}</a></li>
     {% endfor %}
           </ul>
+{% if page.url == '/' %}
+{% assign urls = '/home' | split: "/"%}
+{% else %}
+{% assign urls = page.url | split: "/" %}
+{% endif%}
+<style>
+  .msg-container{
+    border-top:2px dashed #ddd;
+  }
+  .msg-container .msg-container{
+    margin-left:3px;
+    padding-left:3px;
+    border-top:0;
+    border-left:2px double #ddd;
+  }
+  .msg-item{
+    border-radius: 4px;
+    border:2px solid #eee;
+    margin:3px;
+  }
+  .msg-meta{
+    position:relative;
+    clear:both;
+    float:none;
+    height:36px;
+  }
+  .msg-time{
+    float:right;
+    clear:both;
+    background: #eee;
+  }
+  .msg-user{
+    float:right;
+    clear:both;
+    background: #ee9;
+  }
+  img.msg-user {
+    position:absolute;
+    left:0;
+    top:0;
+    max-height: 34px;
+    max-width: 34px;
+    margin:2px;
+  }
+  textarea.msg{
+    width:99%;
+  }
+  .msg-body{
+    clear:both;
+  }
+</style>
+<script>
+  function onMessage(msg){
+    var converter = new showdown.Converter();
+    converter.setFlavor('github');
+    //text      = '# hello, markdown!',
+    // html      = ;
+    this.msg = msg;
+    var html = ['<div class=msg-container>']
+    for(var i=0;i<msg.data.length;i++){
+      html.push('<div class="msg-item">')
+      var item = msg.data[i];
+      genContent(item,html);
+      if(item.comments>0){
+         html.push(loadComments(item.comments_url));
+      }
 
+      html.push('</div>')//class="msg-item">')
+
+    }
+    html.push('</div>')
+    document.write(html.join(''))
+
+
+
+
+    var commentInc = 0;
+    function loadComments(url){
+      var id = 'msg-replay-'+(commentInc++);
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET",url,true);
+      xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+          var data = JSON.parse(xhr.responseText);
+          var html = ['<div class=msg-container>'];
+          data.map(item=>genContent(item,html));
+          html.push('</div>');
+          document.getElementById(id).innerHTML = html.join('');
+        }
+      }
+      xhr.send('');
+      return '<div class="msg-replay" id="'+id+'">Loading....</div>'
+    }
+    function genContent(item,html){
+      html.push('<div class="msg-meta">');
+      html.push('<div class="msg-user"><a href='+ item.user.html_url+'>'+item.user.login+'</a></div>');
+      html.push('<div class="msg-time">@'+item.updated_at+'</div>');
+      html.push('<a href='+ item.user.html_url+'><img class="msg-user" src='+item.user.avatar_url+'/></a>');
+      html.push('</div>');
+      html.push('<div class="msg-body">'+converter.makeHtml(item.body)+'</div>');
+    }
+
+  }
+</script>
+<script src="/assets/js/showdown.min.js"></script>
+<!--
+<script src="http://api.github.com/repos/jindw/xmldom/issues?label=parser&callback=onMessage"></script>
+-->
+
+<script src="http://api.github.com/repos/nan-king/p4nan/issues?labels=message::{{urls[1]}}&callback=onMessage"></script>
+
+<textarea class="msg" placeholder="Leave your mark" onclick="window.open('https://github.com/nan-king/p4nan/issues/new?labels=message%3A%3A{{urls[1]}}')"></textarea>
           {% if site.github.is_project_page %}
             <p class="repo-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</p>
           {% endif %}
