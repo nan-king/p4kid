@@ -2,69 +2,113 @@
 <script>
 //画线
 //drawLine(x0,y0,x1,y1)
+//画多边形
+//drawShape(x0,y0,
+//		 x1,y1,
+//		 x2,y2,
+//		 ...
+//	)
+/*
+
+blue	#0000ff	rgb(0,0,255)
+orange	#ffa500	rgb(255,165,0)
 
 
-// //画多边形
-// var shape1 = drawShape(0,0,
-// 		100,0,
-// 		0,100)
-// shape1.fill('red');
+*/
+
+setTimeout(()=>{
+	ctx.fillStyle='gray';
+	//alert(ctx.fillStyle)
+},100)
+
+function rgb(r,g,b){
+	r = (r+0)/1
+	g = (g+0)/1
+	b = (b+0)/1
+	return '#'+((256+r)<<16 | g<<8 |b).toString(16).slice(1)
+}
+//画七巧板
+var shape1 = drawShape(0,0,
+		100,100,
+		0,200)
+shape1.fill(rgb(255,165,0));//'orange'
+
+var shape2 = drawShape(0,0,
+		100,100,
+		200,0)
+shape2.fill(rgb(0,0,255));//'blue'
+
+var shape3= drawShape(150,50,
+		200,100,
+		200,0)
+shape3.fill(rgb(128,0,128));//'purple' #800080
+
+
+drawShape(150,50,
+		200,100,
+		150,150,
+		100,100,
+		).fill(rgb(0,128,0));//'green' #008000
+
+drawShape(50,150,
+		150,150,
+		100,100,
+		).fill(rgb(238,130,238));//'violet'
+
+
+drawShape(200,100,
+		200,200,
+		100,200
+		).fill(rgb(255,192,203));//'pink');//#ffc0cb
 
 
 
-// var shape2 = drawShape(100,0,
-// 		200,0,
-// 		200,100,
-// 		100,100)
-// shape2.fill('yellow');
+drawShape(50,150,
+		150,150,
+		100,200,
+		0,200
+		).fill(rgb(255,255,0));//'yellow');//#ffff00
 
 
-
-// var shape3=drawShape(200,0,
-// 	100,100,
-// 	0,100)
-// shape3.fill('pink')
-
-// var shape4=drawShape(100,100,
-// 	200,150,
-// 	100,200,
-// 	0,150)
-// shape4.fill("green")
-
-
-// var shape5=drawShape(0,100,
-// 	100,100,
-// 	 0,150)
 
 //画国旗:
-var h = 75;
-var w = 100;
+//长宽比3:2
+//大星外圆直径 h*0.3
+//小星外接圆直径 h*0.1
+//大星位置（w/6,h/4）
+//小星-大星距离约(约) 0.22 *w，角度约30， 每星旋转约23.
+//第一个小星位置，(cx+5/20h, cy-3/20h)
+
+var h = 100;
+var w = 150;
+
+
 //绘制旗面
 drawShape(0,0,
  w,0,
  w,h,
  0,h
- ).fill('red');
-var w2=3;
-var h2=h*3
+ ).fill(rgb(255,0,0));
+
+//绘制旗杆
 drawShape(0,0,
  2,0,
- 2,h*3,
- 0,h*3).fill('gray')
+ 2,h*3, 
+ 0,h*3).fill(rgb(128,128,128))
 
-var cx = w/5 //大五角星中心点 x
-var cy = h/3; //大五角星中心点 y
-var cr = h/12; //大五角星外圆半径
+var cx = w/6 //大五角星中心点 x
+var cy = h/4; //大五角星中心点 y
+var cr = h*0.15; //大五角星外圆半径
 //drawStart5(x,y,r)
-drawStart5(cx,cy,cr).fill('yellow')
+drawStart5(cx,cy,cr).fill(rgb(255,255,0))
 
-var r = h/3; //小五角星到大五角星的距离
+var r = w*0.24; //小五角星到大五角星的距离
 var i = 0;
 while(i<4){
  drawStart5(
-  cx+toX(r,(30-30*i)),// toX(radio,angle)  根据半径和角度，计算x偏移
-  cy+toY(r,(30-30*i)),// toY(radio,angle)  根据半径和角度，计算y偏移
-  cr*0.6)
+  cx+radioAngleToX(r,(30-23*i)),// toX(radio,angle)  根据半径和角度，计算x偏移
+  cy+radioAngleToY(r,(30-23*i)),// toY(radio,angle)  根据半径和角度，计算y偏移
+  h*0.05)
  .fill('yellow');
  i++;
 }

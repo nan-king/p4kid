@@ -1,6 +1,7 @@
 var canvas = document.createElement('canvas');
 canvas.setAttribute('width',606);
 canvas.setAttribute('height',606);
+
 document.write(`
 <style>
 #canvas-parent{
@@ -109,10 +110,12 @@ function drawShape(x0,y0){
 		}
 	}
 }
-
-function toX(r,angle){
+function rgb(r,g,b){
+	return '#'+(((256+r)<<16) | (g<<8) | b).toString(16).slice(1);
+}
+function radioAngleToX(r,angle){
 	return r * Math.cos(angle/180*Math.PI);
 }
-function toY(r,angle){
+function radioAngleToY(r,angle){
 	return -r * Math.sin(angle/180*Math.PI);
 }
