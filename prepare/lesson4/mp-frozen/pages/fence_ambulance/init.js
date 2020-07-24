@@ -1,5 +1,5 @@
 exports.init = function(app){
-  app.globalData.fence_ambulance='https://nan.xidea.org/images/fence_ambulance.mp3';
+  app.globalData.fence_ambulance='https://nan.xidea.org/images/fence_ambulance/fa.mp3';
   getCloudFile('cloud://myfrozen.6d79-myfrozen/mp3/fence_ambulance.mp3',
       path => {
         app.globalData.fence_ambulance = path;

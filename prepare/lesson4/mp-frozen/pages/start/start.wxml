@@ -4,7 +4,7 @@
   <view class="pages">
     <navigator url="../fence_ambulance/fa">
         <view class="fence_ambulance" >
-          <image class="letitgo-bg" src="https://nan.xidea.org/images/frozen/frozen.jpg"  />
+          <image class="letitgo-bg" src="https://nan.xidea.org/images/fence_ambulance/ambulance.jpg"  />
           <text>护栏||救护车</text>
         </view>
     </navigator>
