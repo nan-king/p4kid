@@ -1,0 +1,380 @@
+//<script>
+	//591900000
+	//8900000
+
+	//v2
+	//37800000
+	//1100000
+
+var v1 = [8,0,0  ,4,0,0  ,5,0,1];
+var v2 = [0,9,0  ,2,0,8  ,6,0,0];
+var v3 = [5,0,0  ,0,0,0  ,0,0,0];
+
+var v4 = [1,0,0  ,0,4,0  ,2,8,5];
+var v5 = [4,2,0  ,3,0,1  ,0,0,0];
+var v6 = [7,6,5  ,8,9,0  ,3,0,4];
+
+var v7 = [0,5,0  ,9,0,4  ,0,1,0];
+var v8 = [9,7,0  ,0,0,6  ,0,0,0];
+var v9 = [0,4,6  ,0,0,0  ,9,0,0];
+
+
+// var data1 = [v4,v5,v6,v7,v8,v9,v1,v2,v3,];
+
+
+// var v4 = [2,3,1  ,5,6,4  ,8,9,7];
+// var v5 = [5,6,4  ,8,9,7  ,2,3,1];
+// var v6 = [8,9,7  ,2,3,1  ,5,6,4];
+
+// var v7 = [3,1,2  ,6,4,5  ,9,7,8];
+// var v8 = [6,4,5  ,9,7,8  ,3,1,2];
+// var v9 = [9,7,8  ,3,1,2  ,6,4,5];
+
+
+// var v1 = [1,2,3  ,4,5,6  ,7,8,9];
+// var v2 = [4,5,6  ,7,8,9  ,1,2,3];
+// var v3 = [7,8,9  ,1,2,3  ,4,5,6];
+
+
+// var data = [v4,v5,v6,v7,v8,v9,v1,v2,v3,];
+// for(var i=0;i<data.length;i++){
+// 	var b1 = data[i];
+// 	var b2 = data1[i];
+// 	for(var j=0;j<9;j++){
+// 		if(!b2[j]){
+// 			b1[j]=0;
+// 		}
+// 	}
+// }
+
+// printData(data);
+
+
+
+var data = [v1,v2,v3,v4,v5,v6,v7,v8,v9,];
+
+// var v4 = [2,3,1  ,5,6,4  ,8,9,7];
+// var v5 = [5,6,4  ,8,9,7  ,2,3,1];
+// var v6 = [8,9,7  ,2,3,1  ,5,6,4];
+
+// var v7 = [3,1,2  ,6,4,5  ,9,7,8];
+// var v8 = [6,4,5  ,9,7,8  ,3,1,2];
+// var v9 = [9,7,8  ,3,1,2  ,6,4,5];
+
+
+// var v1 = [1,2,3  ,4,5,6  ,7,8,9];
+// var v2 = [4,5,6  ,7,8,9  ,1,2,3];
+// var v3 = [7,8,9  ,1,2,3  ,4,5,6];
+
+
+
+var data2 = data.map(v=>v.concat());
+
+var options = data.map(v=>{
+	var missedKeys = [];
+	for(var k=1;k<=9;k++){
+		if(v.indexOf(k)<0){
+			missedKeys.push(k);
+		}
+	}
+	var len = missedKeys.length;
+	var opts = [];
+	//排列组合生成
+	function gen(prefix,optKeys){
+		if(prefix.length +1 == len){
+			for(k of optKeys){
+				opts.push(prefix.concat(k))
+			}
+		}else{
+			for(var i=0;i<optKeys.length;i++){
+				var keys2 = optKeys.concat();
+				keys2.splice(i,1);
+				gen(prefix.concat(optKeys[i]),keys2)
+			}
+		}
+
+	}
+	gen([],missedKeys);
+	// console.log(missedKeys)
+	// console.log(opts)
+	if(opts.length ==0){
+		return [v.concat()];
+	}
+	var opts2 = opts.map(keys=>{
+		var v2 = v.concat();
+		//console.log(keys)
+		for(var i = 0,j=0;i<v2.length;i++){
+			if(!v2[i]){
+				v2[i] = keys[j++];
+			}
+		}
+		return v2;
+	});
+
+	//console.log(opts2);
+	return opts2;
+});
+var inc = 0;
+var success=0;
+var failed = 0;
+function genMatrix(prefix,token){
+	try{
+		var len = prefix.length;
+		if(len == 9){
+			if(check(prefix)){
+				console.log('success!!')
+				printData(prefix);
+				throw '';
+			}
+		}else if(check(prefix) !== false){
+
+			var opts = options[len];
+			for(var i=0;i<opts.length;i++){
+				var prefix2 = prefix.concat([opts[i]]);
+
+				//console.log(len,prefix2.length,i,prefix,opts.length,token,success/failed,failed)
+				genMatrix(prefix2,inc)
+			}
+			inc++;
+			success++;
+			
+		}else{
+			//printData(prefix);
+			failed++;
+			if(failed %  100000==0){
+				console.log('failed:',failed);
+			}
+		}
+	}catch(e){
+		console.log(e,len)
+	}
+}
+
+console.log(options.map(a=>a))
+//var status = data.map(v=>0);
+console.log('check tpl',checkTpl(data))
+genMatrix([]);
+//console.log(check(data2))
+//console.log(options)
+//printData(data2)
+function printData(data){
+	for(var i=0;i+3<=data.length;i+=3){
+		var a = data[i+0];
+		var b = data[i+1];
+		var c = data[i+2];
+		for(j=0;j<9;j+=3){
+			var line1 = a.slice(j,j+3);
+			var line2 = b.slice(j,j+3);
+			var line3 = c.slice(j,j+3);
+			console.log([line1,line2,line3].join('\t'))
+		}
+		console.log('')
+	}
+}
+
+function checkTpl(data){
+	//check rows;
+	for(var i=0;i+3<=data.length;i+=3){
+		var a = data[i+0];
+		var b = data[i+1];
+		var c = data[i+2];
+		for(j=0;j<9;j+=3){
+			var line = a.slice(j,j+3).concat(b.slice(j,j+3)).concat(c.slice(j,j+3));
+			var missed = 0;
+			var zero = 0;
+			for(var n of line){
+				if(!n){
+					zero++;
+				}
+			}
+			for(var k=1;k<=9;k++){
+				if(line.indexOf(k)<0){
+					missed++;
+					if(missed>zero){
+						return false;
+					}
+				}
+			}
+		}
+	}
+	//check cols
+	for(var i=0;i<3;i++){
+		var a = data[i+0];
+		var b = data[i+3];
+		var c = data[i+6];
+		for(j=0;j<3;j+=1){
+			var line = [
+				a[j+0],a[j+3],a[j+6],
+				b[j+0],b[j+3],b[j+6],
+				c[j+0],c[j+3],c[j+6]
+			];
+			var missed = 0;
+			var zero = 0;
+			for(var n of line){
+				if(!n){
+					zero++;
+				}
+			}
+			for(var k=1;k<=9;k++){
+				if(line.indexOf(k)<0){
+					missed++;
+					if(missed>zero){
+						return false;
+					}
+				}
+			}
+		}
+	}
+}
+function check(data){
+	var len = data.length;
+	var col = len%3;
+	var row = (len-col)/3;
+	//check row
+	if(col){
+		var a = data[row*3+0];
+		var b = data[row*3+1];
+		var c = data[row*3+2];
+		if(c){
+			for(j=0;j<9;j+=3){
+				var line = a.slice(j,j+3).concat(b.slice(j,j+3)).concat(c.slice(j,j+3));
+				for(var k=1;k<=9;k++){
+					if(line.indexOf(k)<0){
+						return false;
+					}
+				}
+			}
+		}else if(b){
+			for(j=0;j<9;j+=3){
+				var line = a.slice(j,j+3).concat(b.slice(j,j+3));
+				var missed = 0;
+				for(var k=1;k<=9;k++){
+					if(line.indexOf(k)<0){
+						missed++;
+						if(missed >3){
+							return false;
+						}
+					}
+				}
+			}
+		}
+	}
+	if(row){
+		var a = data[0+col];
+		var b = data[3+col];
+		var c = data[6+col];
+		if(c){
+			for(j=0;j<3;j+=1){
+				var line = [
+					a[j+0],a[j+3],a[j+6],
+					b[j+0],b[j+3],b[j+6],
+					c[j+0],c[j+3],c[j+6]
+				];
+				for(var k=1;k<=9;k++){
+					if(line.indexOf(k)<0){
+						return false;
+					}
+				}
+			}
+		}else if(b){
+			for(j=0;j<3;j+=1){
+				var line = [
+					a[j+0],a[j+3],a[j+6],
+					b[j+0],b[j+3],b[j+6],
+				];
+				var missed = 0;
+				for(var k=1;k<=9;k++){
+					if(line.indexOf(k)<0){
+						missed++;
+						if(missed >3){
+							return false;
+						}
+					}
+				}
+
+			}
+		}
+	}
+	if(row == 2 && col == 2){
+		return true;
+	}
+
+}
+function check_v0(data){
+	//增量添加，增量检查,还可以继续优化
+	//check rows;
+	for(var i=6;i>=0;i-=3){
+		var a = data[i+0];
+		var b = data[i+1];
+		var c = data[i+2];
+		if(c){
+			for(j=0;j<9;j+=3){
+				var line = a.slice(j,j+3).concat(b.slice(j,j+3)).concat(c.slice(j,j+3));
+				for(var k=1;k<=9;k++){
+					if(line.indexOf(k)<0){
+						//console.log('error row',k,i,j,line)
+						return false;
+					}
+				}
+			}
+			break; 
+		}else if(b){
+			for(j=0;j<9;j+=3){
+				var line = a.slice(j,j+3).concat(b.slice(j,j+3));
+				var missed = 0;
+				for(var k=1;k<=9;k++){
+					if(line.indexOf(k)<0){
+						missed++;
+						if(missed >3){
+							return false;
+						}
+					}
+				}
+			}
+			break;
+		}
+		
+	}
+	//check cols
+	for(var i=0;i<3;i++){
+		var a = data[i+0];
+		var b = data[i+3];
+		var c = data[i+6];
+		if(c){
+			for(j=0;j<3;j+=1){
+				var line = [
+					a[j+0],a[j+3],a[j+6],
+					b[j+0],b[j+3],b[j+6],
+					c[j+0],c[j+3],c[j+6]
+				];
+				for(var k=1;k<=9;k++){
+					if(line.indexOf(k)<0){
+						return false;
+					}
+				}
+			}
+		}else if(b){
+			for(j=0;j<3;j+=1){
+				var line = [
+					a[j+0],a[j+3],a[j+6],
+					b[j+0],b[j+3],b[j+6],
+				];
+				var missed = 0;
+				for(var k=1;k<=9;k++){
+					if(line.indexOf(k)<0){
+						missed++;
+						if(missed >3){
+							return false;
+						}
+					}
+				}
+
+			}
+		}
+		
+	}
+	if(data.length == 9){
+		return true;
+	}
+}
+//</script>

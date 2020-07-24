@@ -1,27 +1,19 @@
-<!--index.wxml-->
+<!--pages/start/start.wxml-->
+
 <view class="root">
   <view class="pages">
-    <navigator url="../letitgo/letitgo">
-        <view class="letitgo" >
-          <image class="letitgo-bg" src="/images/frozen.jpg"  />
-          <image class="letitgo-play" src="{{playIcon}}"/>
-          <text>let it go</text>
+    <navigator url="../fence_ambulance/fa">
+        <view class="fence_ambulance" >
+          <image class="letitgo-bg" src="https://nan.xidea.org/images/frozen/frozen.jpg"  />
+          <text>护栏||救护车</text>
         </view>
     </navigator>
-    <navigator url="../letitgo_zh/letitgo">
-        <view class="letitgo" >
-          <image class="letitgo-bg" src="/images/frozen.jpg"  />
-          <image class="letitgo-play" src="{{playIcon}}"/>
-          <text>如冰释</text>
+    <navigator url="../frozen/frozen">
+        <view class="frozen" >
+          <image class="letitgo-bg" src="https://nan.xidea.org/images/frozen/frozen.jpg"  />
+          <text>冰雪奇缘</text>
         </view>
     </navigator>
-    <block wx:for="{{pages}}" wx:for-item="page" wx:for-index="index" wx:key="{{page.key}}">
-      <navigator url="../section/section?index={{index}}">
-        <view>
-          <image class="letitgo-bg" src="{{page.image}}" />
-          <text>{{page.name}}</text>
-        </view>
-      </navigator>
-    </block>
   </view>
 </view>
+

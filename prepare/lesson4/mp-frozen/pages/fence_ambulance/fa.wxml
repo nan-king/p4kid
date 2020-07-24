@@ -1,0 +1,15 @@
+<view class="root" wx:if="page">
+  <view class="header" style="height:0">
+    <!-- 播放控件  -->
+    <audio bindtimeupdate="timeupdate" id="myAudio" style='display:none' src="{{audioSrc}}" />
+  </view>
+  <scroll-view scroll-y="true" style="height:100%"
+   scroll-with-animation='true' scroll-into-view="{{'line_'+(selectedIndex<1?0:selectedIndex-1)}}">
+    <block wx:for="{{content}}" wx:for-item="line" wx:for-index="index" wx:key='index'>
+      <view class='line' id="{{'line_'+index}}">
+        <rich-text nodes="{{line.text}}" class="{{['pre','selected','next'][index - selectedIndex+1]}}" bindtap="chooseLine" data-index="{{index}}" data-time="{{line.time}}" />
+      </view>
+    </block>
+  </scroll-view>
+</view>
+

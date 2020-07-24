@@ -1,0 +1,4 @@
+<!--pages/letitgo_zh/letitgo.wxml-->
+<!--  -->
+<video id="myVideo" src="https://f.video.weibocdn.com/000WhWjulx07vUfJEsxi01041200VC8P0E010.mp4?label=mp4_hd&template=640x360.24.0&trans_finger=00d6f051af67aabec160a64dc64cc52b&Expires=1571462981&ssig=JTLoMAZwB%2F&KID=unistore,video" duration="226" bindtimeupdate="timeupdate"></video>
+<text>如冰释</text>

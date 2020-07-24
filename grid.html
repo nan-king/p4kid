@@ -1,0 +1,45 @@
+<script src="docs/lib/nan-init-v1.js"></script>
+<script>
+
+var canvas = document.getElementsByTagName('canvas')[0];
+setTimeout(function(){
+	var width = 500
+	canvas.setAttribute('height',width);
+	canvas.width=width;
+	var width = 500;
+	var step=width/15
+	for(var i=0;i<50;i++){
+		drawLine(i*step,0,i*step,width);
+		drawLine(0,i*step,width,i*step);
+	}
+
+
+},100)
+
+
+// //画方向盘:
+// drawLine(0,100,200,100);
+// drawLine(100,0,100,200);
+// drawCycle(100,100,100);
+
+
+// 画正方型:
+// drawLine(0,0,100,0);
+// drawLine(100,0,100,100);
+// drawLine(100,100,0,100);
+// drawLine(0,100,0,0);
+
+
+
+// 画救生圈:
+// var r1 = 50;
+// var r2 = 20;
+// var n = 30;
+// //drawCycle(100,100,r1);
+// for(var i=0;i<n;i++){
+// 	var x = 100+Math.sin(Math.PI*2/n*i)*r1;
+// 	var y = 100+Math.cos(Math.PI*2/n*i)*r1;
+// 	drawCycle(x,y,r2);
+// }
+
+</script>

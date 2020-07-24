@@ -1,15 +1,17 @@
 {
   "pages": [
     "pages/start/start",
-    "pages/setting/setting",
-    "pages/section/section",
-    "pages/letitgo/letitgo",
-    "pages/letitgo_zh/letitgo"
+    "pages/frozen/frozen",
+    "pages/frozen/letitgo",
+    "pages/frozen/letitgo_zh",
+    "pages/frozen/section",
+    "pages/fence_ambulance/fa",
+    "pages/setting/setting"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "冰雪奇缘编程测试",
+    "navigationBarTitleText": "护栏还是救护车",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"

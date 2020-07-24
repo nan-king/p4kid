@@ -1,10 +1,9 @@
-/**index.wxss**/
+/* pages/start/start.wxss */
 .pages {
   display: grid;
   padding-left:1%;
   grid-template-columns:32% 32% 32%;
   grid-gap: 1.33%;
-
 }
 .pages view{
   border:2px solid red;

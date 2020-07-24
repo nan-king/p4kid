@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>公章</title>
+  </head>
+
+    <body>
+        <div id="tuzhangdiv" >
+        <canvas id="canvas" width=225" height="225"></canvas>
+        </div>
+        <script>var title = '北京三快云计算有限公司';
+        var code = '1101050866206';
+        createSealEx('canvas',title,code);
+
+
+	//41-42
+	function createSealEx(canvasId,title,code){
+        var canvas = document.getElementById(canvasId);
+        var context = canvas.getContext('2d');  
+
+        var cx=canvas.width/2;
+        var cy=canvas.height/2; 
+        var rate = canvas.width/2500;
+	    createSeal(context,title,code,cx,cy,rate);
+        filter(context,canvas.width,canvas.height);
+	}
+    function filter(ctx,w,h){
+        var imgData=ctx.getImageData(0,0,w,h);
+        var data = imgData.data;
+        console.log(data.length,w*h)
+        for(var i=0;i<data.length;i+=4){
+
+
+            var red = data[i];
+            if(red){
+                var wsum = 0;
+                var off = 1;
+                for(var t=1;t<=off;t++){
+                    var begin = Math.max(i-w*t,0)-off*4;
+                    var end = begin+off *8;
+                     for(var x = begin; x<=end;x+=4){
+                        var diff1 = Math.abs(x-begin- i)
+                        wsum+= (data[x] == 0xff? 0: diff1 + off-t+1);
+                     }
+                }
+                var max = off*(off*2+1);
+                if(wsum){
+                    var test = wsum>53500?0.8:wsum>13500?0.6:0.9
+                    if(Math.random()>test){
+                         data[i]=0x0;
+                         data[i+3]=0x0;
+                    }
+
+                }
+            }
+            //data[i] = red/12;
+        }
+        ctx.clearRect(0,0,w,h)
+        ctx.putImageData(imgData,0,0);
+    }
+	
+    function createSeal(context,title,code,cx,cy,rate){
+        var radius = 1100 * rate;
+    	context.translate(0,0);//移动坐标原点 \
+        // 绘制印章边框   
+    	var color = '#e30000'
+        context.lineWidth=60 * rate;
+        context.strokeStyle=color;
+        context.fillStyle = color;
+        context.beginPath();
+        context.arc(cx,cy,radius,0,Math.PI*2);
+        context.stroke();
+        context.save(); 
+    	
+        //画五角星
+        create5star(context,cx,cy,300 * rate,color,0);
+    	
+        // 绘制印章单位   
+        var fontSize = 300 * rate;
+        {
+            context.save(); 
+            context.translate(cx,cy);// 平移到此位置,  
+            context.font = 'bolder '+fontSize+'px 华文宋体'
+            context.textAlign="center";
+            context.textBaseline = 'bottom'
+            var allAngle = Math.PI * 1.30;
+            
+            var count = title.length;// 字数   
+            var angle = allAngle /((count - 1));// 字间角度   
+            var chars = title.split("");   
+            var c;
+            context.rotate(-angle * ((count-1)/2));
+            for (var i = 0; i < count; i++){
+                c = chars[i];// 需要绘制的字符
+                context.save(); 
+                context.translate( 0,  -(radius - fontSize));// 平移到此位置,此时字和x轴垂直，第一个参数是与圆外边的距离，越大距离越近   
+                //context.rotate(Math.PI/2);// 旋转90度,让字平行于x轴   
+                context.fillText( c,0, 70 * rate);// 此点为字的中心点   
+                context.restore();  
+                context.rotate(angle);          
+            }
+            context.restore();     
+        }
+        
+    	 // 绘制印章名称   
+        var fontSize = 100 * rate;
+        {
+            context.save(); 
+            context.fillStyle = color
+            context.translate(cx,cy);// 平移到此位置,  
+            context.font = 'bolder  '+fontSize+'px SimSun'
+            context.textAlign="center";
+            context.textBaseline = 'bottom'
+            var allAngle = Math.PI * 0.42;
+            
+            var count = code.length;// 字数   
+            var angle = allAngle /((count - 1));// 字间角度   
+            var chars = code.split("").reverse();   
+            var c;
+            context.rotate(-angle * ((count-1)/2));
+            for (var i = 0; i < count; i++){
+                c = chars[i];// 需要绘制的字符
+                context.save(); 
+                context.translate( 0,  (radius - fontSize));// 平移到此位置,此时字和x轴垂直，第一个参数是与圆外边的距离，越大距离越近   
+                //context.rotate(Math.PI/2);// 旋转90度,让字平行于x轴   
+                context.fillText( c,0, 0);// 此点为字的中心点   
+                context.restore();  
+                context.rotate(angle);          
+            }
+            context.restore();     
+        }
+        // {
+        //     context.fillStyle = '#f00';
+        //     context.translate(cx,cy);// 平移到此位置,  
+        //     context.font = 'border 58px SimSun'
+
+        //     var allAngle = Math.PI/3;
+        //     var count = code.length;// 字数   
+        //     var angle = allAngle/((count - 1));// 字间角度   
+        //     var chars = code.split("");   
+        //     var c;
+        //     for (var i = 0; i < count; i++){
+        //         c = chars[i];// 需要绘制的字符   
+        //         if(i==0)
+        //             context.rotate(-5*Math.PI/6);
+        //         else
+        //           context.rotate(-angle);
+        //         context.save(); 
+
+        //         context.translate(95, 0);// 平移到此位置,此时字和x轴垂直，第一个参数是与圆外边的距离，越大距离越近   
+        //         context.rotate(Math.PI/2);// 旋转90度,让字平行于x轴   
+        //         //context.fillText(c,0, 5);// 此点为字的中心点   
+        //         context.restore();             
+        //     }
+        // }
+
+        //    
+        // context.fillStyle = '#f00';
+        // context.font = 'border 24px SimSun';
+        // context.textBaseline = 'middle';//设置文本的垂直对齐方式
+        // context.textAlign = 'center'; //设置文本的水平对对齐方式
+        // context.lineWidth=1;
+        // context.fillText(code,width,height+65);
+        
+        
+    			//绘制党徽
+    	//drowImageToCanvas(context,width,height);
+    	
+    	/* */
+     
+     
+        //绘制五角星  
+        /** 
+         * 创建一个五角星形状. 该五角星的中心坐标为(sx,sy),中心到顶点的距离为radius,rotate=0时一个顶点在对称轴上 
+         * rotate:绕对称轴旋转rotate弧度 
+         */  
+        function create5star(context,sx,sy,radius,color,rotato){
+            context.save();  
+            context.fillStyle=color;  
+            context.translate(sx,sy);//移动坐标原点  
+            context.rotate(Math.PI+rotato);//旋转  
+            context.beginPath();//创建路径  
+            var x = Math.sin(0);  
+            var y= Math.cos(0);  
+            var dig = Math.PI/5 *4;  
+            for(var i = 0;i< 5;i++){//画五角星的五条边  
+             var x = Math.sin(i*dig);  
+             var y = Math.cos(i*dig);  
+             context.lineTo(x*radius,y*radius);  
+            }   
+            context.closePath();  
+            context.stroke();  
+            context.fill();  
+            context.restore();  
+        }
+    	
+    	// canvas对象绘制图片  
+    	function drowImageToCanvas(context,x,y) { 
+    	//alert(x+"|"+y); 
+    	 //创建新的图片对象
+    		 // var img = new Image();
+    		 // //指定图片的URL
+    		 // img.src = "dh.png";
+    		 // //浏览器加载图片完毕后再绘制图片
+    		 // img.onload = function(){
+    			//  context.save();
+    			//  context.rotate(-0.5);//旋转
+    			//  //以Canvas画布上的坐标(10,10)为起始点，绘制图像
+    			//  context.translate(-165,-165);//移动坐标原点 
+    			//  context.drawImage(img,x,y);   
+    			//  context.restore();		 
+		 // };	
+	}
+ 
+ 
+}  
+    </script>
+<!--         <BR>
+        输入单位：<input id="dw" width="50" type="text" value='某某某某某某单位人事部'/>
+		章下面文字：<input id="mdtext" width="50" type="text" value='专用章'/>
+		
+        <input type="button" οnclick="javascript:createSealEx();" value="生成公章"/> -->
+    </body>
+
+</html>
