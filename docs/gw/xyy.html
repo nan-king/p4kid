@@ -534,7 +534,8 @@ div.block:nth-child(9n+10){
 	--height:49.6px;
 }
 .hanzi span{
-	font-size: 100%;
+	font-size: 27px;
+	--font-size: 100%;
 	width:28px;
 	height:30px;
 	text-align: center;
@@ -549,7 +550,10 @@ div.block:nth-child(9n+10){
 
 	overflow: visible;
 }
-.hanzi .desc{
+.hanzi div.desc span,.hanzi div.desc-warn span{
+	height:1px;
+}
+.hanzi div.desc{
 	display:block;
 	text-indent: 6px;
 	background: #ffe;
