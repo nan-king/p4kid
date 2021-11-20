@@ -1,0 +1,578 @@
+<meta charset="utf-8">
+
+<script>
+var source = `
+běi míng yǒu yú，qí míng wéi kūn 。
+北冥有鱼，其名为鲲。
+#北方的深海有条大鱼，它的名字叫鲲。
+
+kūn zhī dà ，bú zhī qí jǐ qiān lǐ yě 。
+鲲之大，不知其几千里也。
+#鲲多大呢，不知道它有几千里长
+
+huà ér wéi niǎo ，qí míng wéi péng 。
+化而为鸟，其名为鹏。
+#变化为鸟，名字叫鹏。
+
+péng zhī bèi ，bú zhī qí jǐ qiān lǐ yě 。
+鹏之背，不知其几千里也。
+#鹏的脊背，不知道有几千里长；
+
+nù ér fēi ，qí yì ruò chuí tiān zhī yún 。
+怒而飞，其翼若垂天之云。
+#它努力高飞时（怒：通“努”），翅膀就像挂在天边的云。
+
+shì niǎo yě ，hǎi yùn zé jiāng xǐ yú nán míng ，nán míng zhě ，tiān chí yě 。
+是鸟也，海运则将徙于南冥，南冥者，天池也。
+#?这只鸟啊，遇到（北）海翻腾的时候就要迁徙到南方深海去了。南方的深海有天一样宽广的水域。
+
+
+《qí xié 》zhě ，zhì guài zhě yě 。
+《齐谐》者，志怪者也。
+#《齐谐》是一部专门记载怪异事情的书
+
+《xié 》zhī yán yuē ：
+《谐》之言曰：
+#这本书上记载说：
+
+“péng zhī xǐ yú nán míng yě ，shuǐ jī sān qiān lǐ ，
+“鹏之徙于南冥也，水击三千里，
+#“鹏鸟向南方深海迁徙时，翅膀拍击水面激起三千里的波涛，
+
+_ tuán fú yáo ér shàng zhě jiǔ wàn lǐ ，qù yǐ liù yuè xī zhě yě 。”
+_抟扶摇而上者九万里，去以六月息者也。”
+#?_凭借着旋风飞上了九万里的高空，离去时带起六月的大风（台风？）。”
+
+yě mǎ yě ，chén āi yě ，shēng wù zhī yǐ xī xiàng chuī yě 。
+野马也，尘埃也，生物之以息相吹也。
+#?像野马奔腾会掀起尘埃，大鹏起飞就煽起大风了；大风反过来又托起了鹏鸟(生：大鹏，物：环境外物。原理：作用力与反作用力)。
+
+tiān zhī cāng cāng ，qí zhèng sè xié ？qí yuǎn ér wú suǒ zhì jí xié ？
+天之苍苍，其正色邪？其远而无所至极邪？
+#我们所见苍茫一片的天空，那是它真正的颜色吗？还是因为高旷辽远没法看到它的尽头呢（所见只是大气层散射光，不是太空本色）？
+
+
+qí shì xià yě ，yì ruò shì zé yǐ yǐ 。
+其视下也，亦若是则已矣。
+#鹏鸟向下看时，大概也是这个样子吧。
+
+
+qiě fū shuǐ zhī jī yě bú hòu ，zé qí fù dà zhōu yě wú lì 。
+且夫水之积也不厚，则其负大舟也无力。
+#如果水汇积不够深，就没有浮起大船的力量。（浮力大小=莫入水下空间（排水量）的等体积水的重力）
+
+fù bēi shuǐ yú ào táng zhī shàng ，zé jiè wéi zhī zhōu ；
+覆杯水于坳堂之上，则芥为之舟；
+#倒一杯水在庭堂的低洼处，可以用芥草作船，
+
+zhì bēi yān zé jiāo ，shuǐ qiǎn ér zhōu dà yě 。
+置杯焉则胶，水浅而舟大也。
+#而放个杯子当船就会粘地上不动了，因为水太浅而船太大了。
+
+fēng zhī jī yě bú hòu ，zé qí fù dà yì yě wú lì 。
+风之积也不厚，则其负大翼也无力。
+#风聚积的力量不够，它便无法托负巨大的翅膀。
+
+gù jiǔ wàn lǐ ，zé fēng sī zài xià yǐ ，ér hòu nǎi jīn péi fēng ；
+故九万里，则风斯在下矣，而后乃今培风；
+#所以，鹏鸟飞到九万里高空，风就在它的身下，然后方能凭借风力飞行，
+
+bèi fù qīng tiān ér mò zhī yāo è zhě ，ér hòu nǎi jīn jiāng tú nán 。
+背负青天而莫之夭阏者，而后乃今将图南。
+#背负着青天，毫无阻挡，这样就能向南远飞了。
+
+
+tiáo yǔ xué jiū xiào zhī yuē ：
+蜩与学鸠笑之曰：
+#寒蝉与小灰雀对此觉得很奇怪，它说：
+
+“wǒ jué qǐ ér fēi ，qiǎng yú fāng ér zhǐ ，shí zé bú zhì ，ér kòng yú dì ér yǐ yǐ ；
+“我决起而飞，抢榆枋而止，时则不至，而控于地而已矣；
+#“我猛地起飞，力图到达榆树和檀树的树枝，有时飞不到，也就落在地上停下来了，
+
+_ xī yǐ zhī jiǔ wàn lǐ ér nán wéi ？”
+_奚以之九万里而南为？”
+#_为什么要到九万里的高空再向南飞呢？”
+
+shì mǎng cāng zhě ，sān cān ér fǎn ，fù yóu guǒ rán ；
+适莽苍者，三餐而反，腹犹果然；
+#到郊野去的人，晚餐前就可以返回，肚子还没饿，不需要干粮；
+
+shì bǎi lǐ zhě xiǔ chōng liáng ，shì qiān lǐ zhě ，sān yuè jù liáng 。
+适百里者宿舂粮，适千里者，三月聚粮。
+#到百里之外去，晚上就要准备第二天的干粮；到千里之外去，就需要三个月的时间来准备粮食。
+
+zhī èr chóng yòu hé zhī ？
+之二虫又何知？
+#寒蝉和灰雀这两个小东西当然不懂得这些道理，
+
+xiǎo zhī bú jí dà zhī ，xiǎo nián bú jí dà nián 。
+小知不及大知，小年不及大年。
+#小智慧搞不懂大智慧，活的短的理解不了活的长的。
+
+
+xī yǐ zhī qí rán yě ？
+奚以知其然也？
+#为什么这样说呢？
+
+
+cháo jun1 bú zhī huì shuò ，huì gū bú zhī chūn qiū ，cǐ xiǎo nián yě 。
+朝菌不知晦朔，蟪蛄不知春秋，此小年也。
+#?朝生暮死的菌类不知有月初月末，蝉不知有春天和秋天，这是活的短的（蝉成虫寿命约两月，庄子不知蝉幼虫在地下生长3~5年，甚至13~17年（数学知识：质数年减少天敌爆发重叠)）
+
+
+chǔ zhī nán yǒu míng líng zhě ，yǐ wǔ bǎi suì wéi chūn ，wǔ bǎi suì wéi qiū 。
+楚之南有冥灵者，以五百岁为春，五百岁为秋。
+#楚国的南方有一颗叫冥灵的大树，五百年为春（复苏生长），五百年为秋（果实成熟）；
+
+shàng gǔ yǒu dà chūn zhě ，yǐ bā qiān suì wéi chūn ，bā qiān suì wéi qiū 。
+上古有大椿者，以八千岁为春，八千岁为秋。
+#上古有一种叫大椿的树，八千年为春，八千年为秋。
+
+cǐ dà nián yě 。
+此大年也。
+#这就是生命周期长的。
+
+ér péng zǔ nǎi jīn yǐ jiǔ tè wén ，zhòng rén pǐ zhī 。bú yì bēi hū ！
+而彭祖乃今以久特闻，众人匹之。不亦悲乎！
+#八百岁的彭祖是一直以来所传闻的寿星，众人只知道和他比长寿，岂不可悲吗（不知道还有更长寿的）？
+
+
+tāng zhī wèn jí yě shì yǐ ：
+汤之问棘也是已：
+#商汤和棘也有过前面所讲的谈话。
+
+“qióng fā zhī běi yǒu míng hǎi zhě ，tiān chí yě 。
+“穷发之北有冥海者，天池也。
+#?_在那草木不生的北方，有一个很深的大海，哪有天一样宽广的水域。。
+
+
+_ yǒu yú yān ，qí guǎng shù qiān lǐ ，wèi yǒu zhī qí xiū zhě ，qí míng wéi kūn 。yǒu niǎo yān ，qí míng wéi péng 。
+_有鱼焉，其广数千里，未有知其修者，其名为鲲。有鸟焉，其名为鹏。
+#_那里有一条鱼，宽有好几千里，没有人知道它有多长，名字叫鲲。有一只鸟，名字叫鹏，
+
+
+_ bèi ruò tài shān ，yì ruò chuí tiān zhī yún 。
+_背若泰山，翼若垂天之云。
+#_它的脊背像座大山，翅膀就像云垂天边。
+
+_ tuán fú yáo yáng jiǎo ér shàng zhě jiǔ wàn lǐ ，jué yún qì ，fù qīng tiān ，rán hòu tú nán ，qiě shì nán míng yě 。
+_抟扶摇羊角而上者九万里，绝云气，负青天，然后图南，且适南冥也。
+#_借着旋风盘旋而上九万里，超越云层，背负青天，然后向南飞翔，去往南方的深海。
+
+_ chì ān xiào zhī yuē ：
+_斥鴳笑之曰：
+#_小麻雀讥笑它说：
+
+_ _‘bǐ qiě xī shì yě ？wǒ téng yuè ér shàng ，bú guò shù rèn ér xià ，áo xiáng péng hāo zhī jiān ，cǐ yì fēi zhī zhì yě 。
+__‘彼且奚适也？我腾跃而上，不过数仞而下，翱翔蓬蒿之间，此亦飞之至也。
+#__'它打算飞到哪儿去？我奋力起飞，不过几丈高就落下来，盘旋于蓬蒿丛中，这也是我飞翔的极限了。
+_ _ _ ér bǐ qiě xī shì yě ？’”
+___而彼且奚适也？’”
+#___而它打算飞到哪儿去？”
+
+cǐ xiǎo dà zhī biàn yě 。
+此小大之辩也。
+#这是大和小的分别。
+
+
+gù fū zhī xiào yī guān ，háng bǐ yī xiāng ，dé hé yī jun1 ，ér zhēng yī guó zhě ，qí zì shì yě ， yì ruò cǐ yǐ 。
+故夫知效一官，行比一乡；德合一君，而征一国者，其自视也，亦若此矣。
+#?同样，(知识)尚且胜任的官员，会努力约束一方百姓的行为；德才能够符合一国之君的人，会努力征得国人信任。看看他们，同样体现了大和小的区别（阎王好过，小鬼难缠）。
+
+ér sòng róng zǐ yóu rán xiào zhī 。
+而宋荣子犹然笑之。
+#然而，宋荣子依然讥笑他们（这些人还是俗人，名利客，宋荣子看不上他们，官员图封，国君图名（国人信任，赞誉））。
+
+
+qiě jǔ shì ér yù zhī ér bú jiā quàn ，jǔ shì ér fēi zhī ér bú jiā jǔ ；
+且举世而誉之而不加劝，举世而非之而不加沮；
+#宋荣子是那种全世界的人都赞誉他 他也不会倍感鼓舞，全世界的人都诽谤他，他也不会因此感到沮丧；
+
+_ dìng hū nèi wài zhī fèn ，biàn hū róng rǔ zhī jìng ，sī yǐ yǐ 。
+_ 定乎内外之分，辩乎荣辱之境，斯已矣。
+#?_他明确了本身和外物的边界，划清了荣辱影响的范围（荣辱不入本身），就觉得（荣辱）不过如此罢了。
+
+
+bǐ qí yú shì ，wèi shuò shuò rán yě 。
+彼其于世，未数数然也。
+#他对于世人，没有急切的要求什么（不求名）。
+
+suī rán ，yóu yǒu wèi shù yě 。
+虽然，犹有未树也。
+#虽然这样，他还是有未达到的境界（树：树立；宋荣子 不求有名，但求有功，《荀子·非十二子》评价宋荣子：上功用、大俭约而僈差等）。
+
+fū liè zǐ yù fēng ér háng ，líng rán shàn yě 。
+夫列子御风而行，泠然善也。
+#列子能驾风行走，轻盈美好。
+
+
+xún yǒu wǔ rì ér hòu fǎn 。bǐ yú zhì fú zhě ，wèi shuò shuò rán yě 。
+旬有五日而后反。彼于致福者，未数数然也。
+#?十五天（一旬：十日，旬有五：10+5）后方才返回地面，他对于（为民）造福的事，没有急切的追求（不求功）。
+
+cǐ suī miǎn hū háng ，yóu yǒu suǒ dài zhě yě 。
+此虽免乎行，犹有所待者也。
+#但他虽然可免于行走的劳苦，却还是要有所依赖（依赖风）。
+
+
+ruò fū chéng tiān dì zhī zhèng ，ér yù liù qì zhī biàn ，yǐ yóu wú qióng zhě ，bǐ qiě è hū dài zāi ？
+若夫乘天地之正，而御六气之辩，以游无穷者，彼且恶乎待哉？
+#?人若能遵循天地自然的本性，把握宇宙万物（“六气”即：阴、阳、风、雨、晦、明）的规律变化，能顺其自然的借助一切自然之力遨游于无穷无尽的境域，不就更加逍遥自由了吗？(技多不压身，掌握的技能越多，受到的限制就越少)。
+
+
+gù yuē ：zhì rén wú jǐ ，shén rén wú gōng ，shèng rén wú míng 。
+故曰：至人无己，神人无功，圣人无名。
+#?因此说：无上境界的人能放下私欲，达天人合一之境（己：私欲，主观偏好）；境界达出神入化的人不会刻意追求功业成就（功：固有价值），德才超群的圣人不在意外界的虚名（名：外界认可）。（注：此处循序渐进的顺序应为： 无名，无功，无己；无己为最高境界，以自然为欲，真我即自然，天人合一）。
+~
+~
+
+yáo ràng tiān xià yú xǔ yóu , yuē:
+尧让天下于许由，曰: 
+#尧帝想吧天下托付给许由（古隐士），说：
+
+ “ rì yuè chū yǐ ， ér jué huǒ bù xī ； qí yú guāng yě , bù yì nán hū ?
+“日月出矣，而爝火不息；其于光也，不亦难乎？
+#_ 太阳出来了，还不熄灭火把；火把那点光也想在太阳底下显摆，也太难了吧。
+_ shí yǔ jiàng yǐ , ér yóu jìn guàn ; qí yú zé yě , bù yì láo hū ? 
+_ 时雨降矣，而犹浸灌；其于泽也，不亦劳乎？
+#_ 及时雨都下了， 还要灌溉田地， 这不是徒劳吗？
+_ fū zǐ lì ér tiān xià zhì , ér wǒ yóu shī zhī ; wú zì shì quē rán , qǐng zhì tiān xià . "
+_ 夫子立而天下治，而我犹尸之；吾自视缺然，请致天下。”
+#_ 先生您啊，只要在这里一站，天下就能安定， 而我还在这尸位而立。 我自视能力缺乏，请让我把天下托付给您。
+ xǔ yóu yuē : 
+许由曰：
+#许由说：
+" zi zhì tiān xià , tiān xià jì yǐ zhì yě ; ér wǒ yóu dài zi , wú jiāng wéi míng hū ?
+“子治天下，天下既已治也；而我犹代子，吾将为名乎？
+#_ 您治理天下， 天下已经治理得很好了， 而我还要取代您， 我难道是图个虚名吗？
+_ míng zhě , shí zhī bīn yě ; wú jiāng wèi bīn hū ?
+_ 名者，实之宾也；吾将为宾乎？
+#_ 名啊，只是依附于实的附属，我难道要做个有名无实的附属吗？
+_  jiāo liáo cháo yú shēn lín , bù guò yī zhī 
+_ 鹪鹩巢于深林，不过一枝；
+#_ 鹪鹩在深林中筑巢，只要一根树枝；
+_ yǎn shǔ yǐn hé , bù guò mǎn fù . 
+_ 偃鼠饮河，不过满腹。
+#_ 鼹鼠饮河水，只要肚子喝饱。
+_ guī xiū hū jūn , yǔ wú suǒ yòng tiān xià wèi ! 
+_ 归休乎君，予无所用天下为！
+#_ 请你回去吧，天下对于我没有什么用！
+_ páo rén suī bù zhì páo , shī zhù bù yuè zūn zǔ ér dài zhī yǐ ! "
+_ 庖人虽不治庖，尸祝不越樽俎而代之矣！”
+#_ 就算厨子不下厨，尸祝(主祭人)也不应该跳过酒席（进入厨房）而代行厨子的职事。”
+_
+
+jiān wú wèn yú lián shū yuē :
+肩吾问于连叔曰：
+#肩吾向连叔求教：
+" wú wén yán yú jiē yú , dà ér wú dàng , wǎng ér bù fǎn .
+“吾闻言于接舆，大而无当，往而不反。
+#_“我听接舆的一些言论，大话连篇没有边际，一说下去就回不到原来的话题上。
+_ wú jīng bù qí yán . yóu hé hàn ér wú jí yě ; dà yǒu jìng tíng , bù jìn rén qíng yān . "
+_ 吾惊怖其言。犹河汉而无极也；大有径庭，不近人情焉。”
+#_ 我十分惊恐他的言论，就好像天上的银河没有边际，跟一般人的感受差异甚远，确实是太不近情理了。”
+lián shū yuē :
+连叔曰：
+#连叔问：
+" qí yán wèi hé zāi ? "
+“其言谓何哉？”
+#“他说的是些什么呢？”
+yuē :
+曰：
+#肩吾转述道：
+"‘miǎo gū shè zhī shān , yǒu shén rén jū yān .
+“‘藐姑射之山，有神人居焉。
+#_ “‘在遥远的姑射山上，住着一位神仙，
+_ _ jī fū ruò bīng xuě , nào yuē ruò chǔ zǐ
+__ 肌肤若冰雪，淖约若处子;
+#__ 皮肤冰清雪净，体态柔美像个小孩，
+_ _ bù shí wǔ gǔ , xī fēng yǐn lù , chéng yún qì , yù fēi lóng , ér yóu hū sì hǎi zhī wài
+__ 不食五谷，吸风饮露，乘云气，御飞龙，而游乎四海之外；
+#__ 不食五谷，吸清风，饮甘露，乘云气，驾飞龙，遨游于四海之外。
+
+~
+
+_ _ qí shén níng , shǐ wù bù cī lì ér nián gǔ shú .
+__ 其神凝，使物不疵疠而年谷熟。’
+#?__ 他只需冲世间凝神片刻，便可使万物不受病害，年年五谷丰登。’
+_ wú yǐ shì kuáng ér bù xìn yě . "
+_ 吾以是狂而不信也。”
+#_ 我认为这全是虚妄之言，一点也不可信。”
+lián shū yuē :
+连叔曰：
+#连叔听后说：
+" rán . gǔ zhě wú yǐ yǔ hū wén zhāng zhī guān , lóng zhě wú yǐ yǔ hū zhōng gǔ zhī shēng .
+“ 然。瞽者无以与乎文章之观，聋者无以与乎钟鼓之声。
+#_“是呀！对于瞎子没法同他们欣赏文和章的华美（文，章：两种彩色花纹；《周礼·考工记·画缋》：青与赤谓之文，赤与白谓之章），对于聋子没法同他们聆听钟鼓的乐声。
+_ qǐ wéi xíng hái yǒu lóng máng zāi ?
+_ 岂唯形骸有聋盲哉？
+#_ 难道只是形骸上有聋与瞎吗？思想上也有聋和瞎啊！
+_ fū zhī yì yǒu zhī ! shì qí yán yě yóu shí nǚ yě .
+_ 夫知亦有之！是其言也犹时汝也。
+#_ 这话似乎就是说你肩吾的呀。
+_ zhī rén yě , zhī dé yě , jiāng páng bó wàn wù yǐ wéi yī , shì qí hū luàn , shú bì bì yān yǐ tiān xià wèi shì !
+_ 之人也，之德也，将旁礴万物以为一，世蕲乎乱，孰弊弊焉以天下为事！
+#_ 那位神人，他的德行，能整合包容万物为同一系统，使整个世界成为太平境界，他怎肯为天下俗事忙忙碌碌呢？
+_ zhī rén yě , wù mò zhī shāng : dà jìn jī tiān ér bù nì , dà hàn jīn shí liú , tǔ shān jiāo ér bù rè .
+_ 之人也，物莫之伤：大浸稽天而不溺，大旱金石流，土山焦而不热。
+#_ 这神人，外物没有什么能伤他的，滔天的大水，淹不着他，天下大旱使金石熔化、土山焦裂，也热不着他。
+_ shì qí chén gòu bǐ kāng jiāng yóu táo zhù yáo shùn zhě yě , shú kěn yǐ wù wèi shì ? "
+_ 是其尘垢秕糠将犹陶铸尧舜者也，孰肯以物为事？”
+#_ 他遗落的尘垢废物，都能再造个尧、舜那样的圣贤人君来，他又怎么可能把外物琐事当一回事呢！” 
+
+_
+
+sòng rén zī zhāng fǔ ér shì zhū yuè , yuè rén duàn fà wén shēn , wú suǒ yòng zhī .
+宋人资章甫而适诸越，越人断发文身，无所用之。
+#北方的宋国有人贩卖帽子到南方的越国，越国人不蓄头发满身刺着花纹，没什么地方用得着帽子。
+yáo zhì tiān xià zhī mín , píng hǎi nèi zhī zhèng , wǎng jiàn sì zǐ miǎo gū shè zhī shān , fén shuǐ zhī yáng , yǎo rán sàng qí tiān xià yān .
+尧治天下之民，平海内之政，往见四子藐姑射之山，汾水之阳，窅然丧其天下焉。
+#尧治理好天下的百姓，安定了海内的政局，到姑射山上、汾水北面，去拜见四位藐姑射山上的得道的高士，不禁怅然若失，我要这江山有何用啊。
+_
+
+huì zi wèi zhuāng zǐ yuē :
+惠子谓庄子曰：
+#惠子对庄子说：
+" wèi wáng yí wǒ dà hù zhī zhǒng , wǒ shù zhī chéng , ér shí wǔ dàn .
+“魏王贻我大瓠之种，我树之成，而实五石。
+#_“魏王送给我大葫芦的种子，我种下后结出的葫芦大得可以容纳五担（粮食）。
+_ yǐ chéng  shuǐ jiāng , qí jiān bù néng zì jǔ yě .
+_ 以盛水浆，其坚不能自举也。
+#_ 用它来盛水，它却因质地太脆无法提举。
+_ pōu zhī yǐ wéi piáo , zé hù luò wú suǒ róng .
+_ 剖之以为瓢，则瓠落无所容。
+#_ 切开它当瓠，又太大了，没有足够大的容器需要它。
+_ fēi bù xiāo rán dà yě , wú wèi qí wú yòng ér póu zhī . "
+_ 非不呺然大也，吾为其无用而掊之。”
+#_ 不是不空空的大，只是因为无用，我把它砸了。”
+
+zhuāng zǐ yuē :
+庄子曰：
+#庄子说：
+
+
+ " fū zǐ gù zhuō yú yòng dà yǐ 
+“夫子固拙于用大矣。
+#“_你真不善于使用大的物件。
+_ sòng rén yǒu shàn wèi bù jūn shǒu zhī yào zhě , shì shì yǐ píng pì kuàng wèi shì .
+_ 宋人有善为不皲手之药者，世世以洴澼絖为事。
+#_ 宋国有个人善于制作防止手冻裂的药，他家世世代代都以漂洗丝絮为职业。
+_ kè wén zhī , qǐng mǎi qí fāng bǎi jīn .
+_ 客闻之，请买其方百金。
+#_ 有个客人听说了，请求用一百金来买他的药方。
+_ jù zú ér móu yuē :
+_ 聚族而谋曰：
+#_ 这个宋国人召集全家商量说：
+_ ' wǒ shì shì wèi píng pì kuàng , bù guò shù jīn , jīn yī zhāo ér yù jì bǎi jīn , qǐng yǔ zhī . '
+_‘ 我世世为洴澼絖，不过数金，今一朝而鬻技百金，请与之。’
+#__ ‘我家世世代代靠这种药从事漂洗丝絮，一年所得不过数金；现在一旦卖掉这个药方马上可得百金，请大家答应我卖掉它。’
+_ kè dé zhī , yǐ shuì wú wáng .
+_ 客得之，以说吴王。
+#_ 这个客人买到药方，就去游说吴王。
+_ yuè yǒu nán , wú wáng shǐ zhī jiāng , dōng , yǔ yuè rén shuǐ zhàn , dà bài yuè rén ， liè dì ér fēng zhī .
+_ 越有难，吴王使之将，冬，与越人水战，大败越人，裂地而封之。
+#_ 那时正逢越国入侵吴国，吴王就命他为将，在冬天跟越国人展开水战，大败越人，吴王就割地封侯来奖赏他。
+
+
+_ néng bù jūn shǒu yī yě , huò yǐ fēng , huò bù miǎn yú píng pì kuàng , zé suǒ yòng zhī yì yě .
+_能不皲手一也，或以封，或不免于洴澼絖，则所用之异也。
+#_ 同一副药方，有人靠它得到封赏，有人却只会用于漂洗丝絮，这是因为使用方法不同啊。
+_ jīn zi yǒu wǔ dàn  zhī hù , hé bù lǜ yǐ wéi dà zūn , ér fú yú jiāng hú ；
+_今子有五石之瓠，何不虑以为大樽，而浮于江湖；
+#_现在你有可容五石东西的大葫芦，为什么不把它做成个大酒葫芦（作为腰舟系在身上），而浮游于江湖呢？
+_ ér yōu qí hù luò wú suǒ róng ? zé fū zǐ yóu yǒu péng zhī xīn yě fū ! "
+_ 而忧其瓠落无所容？则夫子犹有蓬之心也夫！”
+#_ 却担忧它大而无处可容纳，可见你也真是死心眼，不开窍啊！”
+
+
+huì zi wèi zhuāng zǐ yuē :
+惠子谓庄子曰：
+#惠子对庄子说：
+" wú yǒu dà shù , rén wèi zhī chū .
+“吾有大树，人谓之樗。
+#“_我有一棵大树，人家把它叫做臭椿；
+_ qí dà běn yōng zhǒng ér bù zhōng shéng mò , qí xiǎo zhī juǎn qū ér bù zhōng guī jǔ ;
+_ 其大本拥肿而不中绳墨，其小枝卷曲而不中规矩;
+#_ 它那树干上有许多赘瘤，不合绳墨，它那枝丫弯弯曲曲，不合规矩。
+_ lì zhī tú , jiàng zhě bù gù .
+_ 立之涂，匠者不顾。
+#_ 它长在路边，木匠都不看它一眼。
+_ jīn zi zhī yán dà ér wú yòng , zhòng suǒ tóng qù yě . "
+_ 今子之言大而无用，众所同去也。”
+#_ 您说的大物件确实有没用的，大家也都舍弃它不用。”
+
+zhuāng zǐ yuē :
+庄子曰：
+#庄子说：
+" zi dú bú jiàn lí shēng hū ? bēi shēn ér fú , yǐ hòu áo zhě
+“子独不见狸狌乎？卑身而伏，以候敖者；
+#“_你没见过野猫和黄鼠狼吗？屈身伏在那里，等待捕捉来来往往的小动物；
+_ dōng xī tiào liáng , bù pì gāo xià ; zhōng yú jī pì , sǐ yú wǎng gǔ .
+_ 东西跳梁，不辟高下；中于机辟，死于罔罟。
+#_ 它捉小动物时东跳西跃，不避高下；但是一踏中捕兽的机关陷阱，就死在网中了。
+
+_ jīn fū lí niú , qí dà ruò chuí tiān zhī yún .
+_ 今夫斄牛，其大若垂天之云。
+#_ 再看那牦牛，它大如天边的云；
+_ cǐ néng wéi dà yǐ , ér bù néng zhí shǔ .
+_ 此能为大矣，而不能执鼠。
+#_ 这可以说够大的了，但是却不能捕鼠。
+_ jīn zi yǒu dà shù , huàn qí wú yòng , hé bù shù zhī yú wú hé yǒu zhī xiāng , guǎng mò zhī yě ?
+_ 今子有大树，患其无用，何不树之于无何有之乡，广莫之野?
+#_ 现在你有一棵大树，担忧它没有用处，为什么不把它种在虚无之乡，广阔无边的原野。
+_ páng huáng hū wú wéi qí cè , xiāo yáo hū qǐn wò qí xià .
+_ 彷徨乎无为其侧，逍遥乎寝卧其下。
+#_随意地徘徊在它的旁边，逍遥自在地躺在它的下面；
+_ bù yāo jīn fǔ , wù wú hài zhě , wú suǒ kě yòng , ān suǒ kùn kǔ zāi ! "
+_不夭斤斧，物无害者，无所可用，安所困苦哉！”
+#_ 这样的大树不遭斧砍而早死，没有谁谋害它，要它也没什么用。（有这么省心的树）还有什么困苦呢”
+`
+/*
+
+
+*/
+
+source = source.replace(/[\r\n]+/g,'\n');//.replace(/^\s*([\_])\s*$/mg,'$1\n$1');
+//if(/[\u4E00-\u9FA5]/.test(source[0])){ 
+	source = source.replace(/(.+)[\r\n]+(#.*)/g,'$1$2');
+//}
+
+source = source.replace(/[,]/g,'，').replace(/[:]/g,'：')
+	.replace(/^\s+|\s+$/gm,'')
+	.replace(/[ \t]*([，。《》：‘’“”『』「」？？])[ \t]*/g,' $1 ')
+	.replace(/^\s+|\s+$/gm,'')
+	//.replace(/^\s*[\r\n]+/g,'');
+
+console.log(source)
+source = source.split(/[\r\n]+/);
+var desc = [];
+var html = source.map(line =>{
+	let error = '';
+	if(/^\s*~\s*$/.test(line)){
+		return '<div class="section-gap"></div>'
+	}else if(/^\s*[\_\-]\s*$/m.test(line)){
+		return '';//'<div class="section-gap"></div>'
+	}else if(/^\s*$/m.test(line)){
+		return '';
+	}
+
+	if(/[\u4E00-\u9FA5]/.test(line)){
+
+		let p = line.indexOf('#');
+		let desc = p>0?line.slice(p+1):'';
+		console.log(line,p,desc)
+		let wd = line.slice(0,p).replace(/\s+/g,'').split('');
+		let descClass = ''
+		if(desc.charAt() =='?'){
+			desc = desc.slice(1);
+			descClass = 'desc-warn';
+		}
+		return '<div class="hanzi '+ error +'">'+wd.map(w=>'<span>'+w.replace('_','\u00a0')+'</span>').join('')+'<div class="desc '+descClass+'">'+desc.replace(/_/g,'<span>\u00a0</span>')+'</div></div>'
+			+'</div>'
+	}else{//pinyin
+		let wd = line.split(/\s+/);
+		return '<div class="block" >'+
+			'<div class="pinyin '+ error +'">'+wd.map(w=>'<span>'+w.replace(/_/g,'\u00a0')+'</span>').join('').replace(/[̄́̌̀]/g,'<b>$&</b>')+'</div>'
+	}
+	
+	
+	// if(wd.length>6 || wd.length<6 && wd.length >1){//异常拼音
+	// 	console.error(line);
+	// 	error = " error"
+	// }
+	// if(wd.length >=6){
+	// }else{
+	// }
+}).filter(line=>!!line);
+document.write(html.join(''))
+</script>
+<p>个人观点与主流论述差异：<br/>
+1. 大鹏飞行原理论述（野马，尘埃取本义，类比大鹏起飞激起大风， 借助大风的反作用力，托起大鹏（生物以息相吹，生：大鹏，物：外接环境，息：风）。）<br/>
+2. 德合一君，而征一国者 论述。个人认为 其与前句：『故夫知效一官，行比一乡』 形成一大一小，和上一段大小之辩呼应。<br/>
+3. 无名 无功 无己 论述（宋荣子：圣人，不求名，但求功。列子： 神人，不求功，能力有限，未达天人合一之境，尚不足以逍遥）。<br/>
+学鸠之笑：<br/>
+1. 引出 无名 无功 无己<br/>
+2. 俗人不理解无名，无功，无己，不就像学鸠不懂高飞一样吗？高度不够。</p>
+
+<style>
+@media print
+div.block:nth-child(9n+10){
+	page-break-before: always;
+	margin-top:10px;
+}
+</style>
+<style>
+
+.block:nth-child(9n+10){
+	page-break-before: always;
+	margin-top:10px;
+}
+
+</style>
+<style>
+	pre,p{
+		margin:0px;
+		--color:#e66;
+		font-size:14px;
+	font-style: italic;
+	background: #ff9;
+	--background: #ddd;
+	}
+.error{
+	color:red;
+}
+.section-gap{
+	height:30px;
+}
+.page-break{
+	page-break-after: always;
+}
+.block{
+	--float:left;
+	width:1024px;
+	--height:49.6px;
+}
+.hanzi{
+	font-size: 28px;
+}
+.hanzi span,.pinyin span{
+	---outline:1px solid red;
+	display:inline-block;
+	width:28px;
+	
+	padding:0px;
+	---overflow: auto;
+}
+.hanzi .desc{
+	display:block;
+	text-indent: 6px;
+	background: #ffe;
+	--background: #eee;
+	font-size:12px;
+	color:#999;
+	padding-bottom:12px;
+}
+.hanzi div.desc-warn{
+	color:black;
+	color:#e66;
+	font-style: italic;
+}
+.pinyin span{
+	line-height: 12px;
+	font-size:12px;
+	text-align: center;
+}
+.pinyin span:nth-child(0){
+	margin-left:-0px;
+}
+
+.pinyin{
+
+	border: 0px solid red;
+	font-size: 8px;
+}
+.pinyin b{
+	margin-left:0px;
+}
+</style>
